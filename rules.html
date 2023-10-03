@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="images/fav.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/feather.min.css">
+    <link rel="stylesheet" href="css/icofont.min.css">
+	<link rel="stylesheet" href="css/line-awesome.min.css">
+	<link rel="stylesheet" href="css/glyphicon.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+    <title>Bolabet 1X2</title>
+</head>
+<body>
+    <div class="header">
+		<div class="header-top">
+			<ul class="headtop-links float-left">
+				<li><a href="help.html">Help</a></li>
+				<li><a href="#">Live Support</a></li>
+				<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+			<ul class="headtop-links float-right">
+				<li><a href="howtoplay.html">How to play</a></li>
+				<li><a href="payment.html">Payments</a></li>
+				<li><a href="#">My Bets</a></li>
+				<li><a href="playtype.html">Play types</a></li>
+				<li><a href="promotions.html">Promotions</a></li>
+				<!--li><a href="mobileapp.html">Mobile Application</a></li-->
+				<li><a href="coupons.html">Coupons</a></li>
+				<li>
+					<div class="headtop-drop">
+						<div class="headtop-drop-arrow">
+							<i class="la la-angle-right"></i>
+						</div>
+						Odds <span class="headtop-drop-value" id="oddunit-selected">Decimal</span>
+						<div class="headtop-child">
+							<div class="headtop-child-item">
+								<label onclick="oddunit('unitdec')">
+									<input type="radio" name="oddunit" checked="checked">
+									<span id="unitdec">Decimal</span>
+								</label>
+							</div>
+							<div class="headtop-child-item">
+								<label onclick="oddunit('unitfrac')">
+									<input type="radio" name="oddunit">
+									<span id="unitfrac">Fractional</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="headtop-drop">
+						<div class="headtop-drop-arrow">
+							<i class="la la-angle-right"></i>
+						</div>
+						Language <span class="headtop-drop-value" id="lang-selected">English</span>
+						<div class="headtop-child">
+							<div class="headtop-child-item">
+								<label onclick="langselect('lang-eng')">
+									<input type="radio" name="lang-name" checked="checked">
+									<div class="float-left lang-flag"><img src="images/eng-flag.jpg" alt=""/></div>
+									<span id="lang-eng">English</span>
+								</label>
+							</div>
+							<div class="headtop-child-item">
+								<label onclick="langselect('lang-ger')">
+									<input type="radio" name="lang-name">
+									<div class="float-left lang-flag"><img src="images/eng-flag.jpg" alt=""/></div>
+									<span id="lang-ger">German</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li><a class="head-time" href="#">16:14 GMT+2</a></li>
+			</ul>
+		</div>
+		<div class="header-main">
+			<div class="logo-wrapper">
+			   <a href="index.html"> <img src="images/logo.png" alt=""></a>
+			</div>
+			<div class="header-category">
+				<button onclick="menulist()"><i class="ft-menu"></i></button>
+				<ul id="head-menu">
+					<li>
+						<a class="category-sport active" href="index.html">Sports Betting</a>
+					</li>
+					<li>
+						<a class="category-livebet"href="livebet.html">Live Betting</a>
+					</li>
+					<li>
+						<a class="category-virtual" href="#">Virtuals</a>
+					</li>
+				</ul>
+				<script>
+					function menulist() {
+						if(document.getElementById('head-menu').style.display == "block"){ 
+							document.getElementById('head-menu').style.display = "none";
+						}
+						else if(document.getElementById('head-menu').style.display == "none"){
+							document.getElementById('head-menu').style.display = "block";
+						}
+						else{
+							document.getElementById('head-menu').style.display = "block";
+						}
+					}
+				</script>
+			</div>
+			<div class="header-login">
+				<ul>
+					<li><a href="registration.html" class="header-reg-btn">Register</a></li>
+					<li><input type="text" placeholder="Email or Phone No."></li>
+					<li><input type="text" placeholder="Password"><br><a href="#" onclick="forgotpassFunction()" class="head-forget-pass">Forgot Password ?</a></li>
+					<li><a href="login.html" class="header-login-btn">Login</a></li>
+				</ul>
+				
+			</div>
+			<div class="forgotpass-popup" id="forgotpass-block" style="display:none;">
+				<div class="forgotpass-content">
+					<div class="forgotpassclose" onclick="forgotpassclose()"><i class="ft-x"></i></div>
+					<h4>Forgot Password?</h4>
+					<div class="form-group">
+						<label>Enter Email ID:</label>
+						<div class="form-input">
+							<input class="form-control" type="email" placeholder="abc@xyz.com">
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="mb-3">Please enter an E-mail address you registered your account with and we will send you a link with link to reset your password</div>
+					<div class="forgotpass-submit">
+						<button onclick="forgotpassclose()">Cancel</button>
+						<input type="submit" value="Reset Password">
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<script>
+				function forgotpassFunction() {
+					if(document.getElementById('forgotpass-block').style.display == "none"){ 
+						document.getElementById('forgotpass-block').style.display = "block";
+					}
+					else{ 
+						document.getElementById('forgotpass-block').style.display = "none";
+					}
+				}
+				function forgotpassclose() {
+					if(document.getElementById('forgotpass-block').style.display == "block"){ 
+						document.getElementById('forgotpass-block').style.display = "none";
+					}
+				}
+			</script>
+			<div class="clearfix"></div>
+		</div>
+        <div class="clearfix"></div>
+    </div>
+	<div class="content-body">	
+		<div class="container">
+			<div class="container-block">
+				<div class="row">
+					<div class="col-md-4 col-sm-4">
+						<div class="left-panel-block">
+							<div class="left-panel-heading">CATEGORIES</div>
+						<div class="left-panel-list">
+							<ul>
+								<li><a href="mobileapp.html" class="panel-list-item">MOBILE APP</a></li>
+								<li><a href="popular.html" class="panel-list-item active">POPULAR</a></li>
+								<li><a href="online-account.html" class="panel-list-item">ONLINE ACCOUNT</a></li>
+								<li><a href="site&mobileapp.html" class="panel-list-item">SITE AND MOBILE APP</a></li>
+								<li><a href="betting.html" class="panel-list-item">BETTING</a></li>
+								<li><a href="deposite.html" class="panel-list-item">DEPOSIT</a></li>
+								<li><a href="withdrawal.html" class="panel-list-item">WITHDRAWAL</a></li>
+								<li><a href="game-type.html" class="panel-list-item">GAME TYPES</a></li>
+								<li><a href="general.html" class="panel-list-item">GENERAL</a></li>
+							</ul>
+						</div>
+						</div>
+						<div class="left-panel-block">
+							<div class="left-panel-heading">GENERAL</div>
+						<div class="left-panel-list">
+							<ul>
+								<li><a href="restricted-territories.html" class="panel-list-item">Restricted Territories</a></li>
+								<li><a href="contact.html" class="panel-list-item">Contact</a></li>
+								<li><a href="termsandconditions.html" class="panel-list-item">Terms and conditions</a></li>
+								<li><a href="rules.html" class="panel-list-item">Rule Book</a></li>
+								<li><a href="betshop-location.html" class="panel-list-item">Betshop Locations</a></li>
+								<li><a href="responsible-gambling.html" class="panel-list-item">Responsible gambling</a></li>
+							</ul>	
+						</div>
+						</div>
+						
+					</div>
+					<div class="col-md-8 col-sm-8">
+						<div class="right-panel-block1">
+							<div class="block-heading1">
+								<h2>RULE BOOK<a href="general.html"> << Back</a></h2>
+							</div>
+							<div class="block-content-section">
+							    <h4>Rule Book</h4>
+								<p>For using bolabet.com ("CONDITIONS")</p>
+									<div class="tnc-block">
+										<h3>Help</h3>
+											<div class="para-block">
+											<p><b>Can I have multiple accounts on bolabet1x2.com ?</b></p>
+											</div>
+											<p>A person can only have one account, because he made on the basis of your personal information. Having multiple accounts, is leading to the cancelation of all associated accounts.</p>
+											<div class="para-block">
+											<p><b>How I can deposit money into my account?</b></p> 
+											</div>
+											<p>Make a deposit through our shops</p>
+											<div class="para-block">
+											<p><b>What is the minimum stake on the ticket?</b></p> 
+											</div>
+											<p>The Minimum stake per ticket is K 2.00</p>
+											<div class="para-block">
+											<p><b>Do I have to be 18 years old to bet on the Internet?</b></p> 
+											</div>
+											<p>Yes. Only adults who accept the rules.</p>
+											<h3>Terms and Conditions</h3>
+											<p>For using bolabet1x2.com</p>
+											<h3>1. GENERAL</h3>
+											<p>We reserve the right to withdraw the Product or elements of the Product at any time, and will not be liable to you as a result of any such action.</p>
+											<p>1.2 If any part of these Conditions shall be deemed unlawful, void or for any reason unenforceable, then that provision shall be deemed to be severable from these Conditions and shall not effect the validity and enforceability of any of the remaining provisions of these Conditions.</p>
+											<p>1.3 No waiver by us of any of these Conditions shall be construed as a waiver of any preceding or succeeding breach of any of these Conditions.</p>
+											<p>1.4 Nothing in these Conditions shall be construed as creating any agency, partnership or any other form of joint enterprise between you and us.</p>
+											<p>1.5 These Conditions contain the entire agreement between you and us relating to the Product. You confirm that, in agreeing to accept these Conditions, you have not relied on any representation save insofar as the same has expressly been made a representation in these Conditions. You agree that you shall have no remedy in respect of any misrepresentation which has not become a term of these Conditions save that your agreement shall not apply in respect of any fraudulent or negligent misrepresentation whether or not such term has become a term of these Conditions.</p>
+											<h3>2. COMPLIANCE WITH LAWS</h3>
+											<p>The Product may be used only for lawful purposes and in a lawful manner. You agree to comply with all applicable laws, statutes and regulations regarding the Product and any bets placed on or via the Product.</p>
+											<h3>3. NO WARRANTY</h3>
+											<p>3.1 We will endeavour to provide the Product using our reasonable skill and care. We make no further warranty or representation, whether express or implied, in relation to the Product. All implied warranties or conditions of satisfactory quality, fitness for purpose, completeness or accuracy are hereby excluded.</p>
+											<p>3.2 We make no warranty that the Product will meet your requirements or will be uninterrupted, timely, secure or error-free, that defects will be corrected, or that the bolabet1x2.com web-site or the server that makes it available are free of viruses or bugs or represents the full functionality, accuracy, reliability of the materials or as to results or the accuracy of any information obtained by you through the Product.</p> 
+											<p>3.3 In the event of systems or communications errors relating to the generation of random numbers, bet settlement or other element of the Product, we will not be liable to you as a result of any such errors and we reserve the right to void all bets on the draws in question.</p>
+											<h3>4. LIMITATION OF LIABILITY</h3>
+											<p>4.1 You agree that your use of the Product is at your sole risk.</p>
+											<p>4.2 We shall not be liable in contract, tort, negligence, or otherwise, for any loss or damage whatsoever arising from or in any way connected with your use of the Product, whether direct or indirect, including, without limitation, damage for loss of business, loss of profits, business interruption, loss of business information, or any other pecuniary or consequential loss (even where we have been notified by you of the possibility of such loss or damage).</p>
+											<p>4.3 We will not be responsible or liable to you for any loss of content or material uploaded or transmitted through the Product and you confirm that we shall not be liable to you or any third party for any modification to, suspension of or discontinuance of the Product.</p>
+											<h3>5. INDEMNITY</h3>
+											<p>You agree fully to indemnify, defend and hold us, and our officers, directors, employees, agents and suppliers, harmless immediately on demand, from and against all claims, liabilities, damages, losses, costs and expenses, including legal fees, arising out of any breach of the Conditions by you or any other liabilities arising out of your use of the Product or use by any other person accessing the Product using your user identification.</p>
+											<h3>6. TERMINATION</h3>
+											<p>6.1 We may terminate your account (including your username and password) if we believe that you have breached any of these Conditions or acted in a manner inconsistent with the spirit of any of them or for any reason we discontinue to provide the Product.</p>
+											<p>6.2 You acknowledge that we do not have to give you prior notice of any such termination.</p>
+											<h3>7. INTELLECTUAL PROPERTY</h3>
+											<p>7.1 You acknowledge and agree that all copyright, trademarks and all other intellectual property rights in all material or content supplied as part of the bolabet1x2.com betting service shall remain at all times vested in us or our licensors. You are permitted to use this material only as expressly authorised by us or our licensors.</p>
+											<p>7.2 You acknowledge and agree that the material and content contained within the bolabet1x2.com web-site and provided as part of the Product is made available for your personal non-commercial use only and that you may download such material and content onto only one computer hard drive for such purpose. Any other use of such material and content is strictly prohibited. You agree not to (and agree not to assist or facilitate any third party to) copy, reproduce, transmit, publish, display, distribute, commercially exploit, tamper with or create derivative works of such material and content.</p>
+											<h3>8. REGISTRATION/BETTING ACCOUNT</h3>
+											<p>8.1. The company reserves the right to rectify obvious errors when preparing account balances. The company will inform the respective users of the corrections immediately.</p>
+											<p>8.2. The company reserves the right to exclude users with false particulars from participating in the games offered and to refuse them the payment of any winnings. On the company's request, the user is obliged to produce an official document showing his photo, proving his identity (a passport copy, driver's licence or identity card).</p>
+											<p>8.3. Every user may hold only one account. Users already registered are not allowed to register as new users under another name or with another e-mail address. If a user violates this rule, the company is entitled to cancel any bets placed as well as to cancel any FreeBets booked into the respective account.</p>
+											<p>8.4. In case of suspected manipulations or fraud, and in case of any violation of these Terms and Conditions, in particular the multiple simultaneous participation in games and the opening of several accounts, the company may exclude the respective user from placing further bets and from participating in other games. Any criminal or suspicious activities may be reported to the appropriate authorities. In such a case, the company will pay the user any real money balance in his betting account after deducting a handling charge of 10%, provided that this has been acquired in a lawful manner. FreeBets or winnings that may have resulted from FreeBets, which were not acquired in a lawful manner, will be void.</p>
+											<p>8.5. Each client is allowed only one account number and only one account may use the only Zambian IP address and computer</p>
+											<p>You are allowed ONLY ONE ACCOUNT per person, family, household, address, email address, telephone number, debit/ credit account number and shared computer e.g. school, public library or workplace. If you have more than one account, all winnings and bonuses will be VOID, accounts suspended and closed. bolabet1x2.com will act as the final arbitrator or any dispute involving bolabet1x2.com and any other party.</p> 
+											<p>However should any dispute not be resolved to your satisfaction you have the right to file a complaint with the Lotteries and Gaming Authority of Zambia.</p> 
+											<h3>8.6 YOUR OBLIGATION AS A PLAYER </h3>
+											<p>8.6.1. You hereby declare and warrant that:</p> 
+											<p>8.6.2. You are over 18 years of age or such higher minimum legal age of majority as stipulated if the jurisdiction of Your residence and, under the laws applicable to You, legally allowed to participate in the Games offered on the Website.</p>
+											<p>8.6.3 You participate in the Games strictly in your personal non- professional capacity for recreational and entertainment reasons only;</p>
+											<p>8.6.4. You participate in the Games on your own behalf and not on behalf of any other person;</p>
+											<p>8.6.5. All information that You provide to Bolabet.com during the term of validity of this agreement is true, complete, and correct, and that You shall immediately notify bolabet1x2.com of any change of such information;</p> 
+											<p>8.6.6. You are solely responsible for reporting and accounting for any taxes applicable to You under relevant laws for any winnings that You receive from bolabet1x2.com;</p>
+											<p>8.6.7. All money that You deposit into Your Gaming Account are not tainted with any illegality and, in particular, do not originate form any illegal activity or source;</p>
+											<p>8.6.8. You understand that by participating in the Games you take the risk of losing money deposited into Your Gaming Account;</p>
+											<h3>9. PAYMENT METHODS</h3>
+											<p>9.1. The company reserves the right to charge a handling fee for any transaction made. Any handling fee - if applicable - will be billed to the respective user during the course of the transaction.</p>
+											<p>List of payment providers and their respective limits and fees:</p>
+											<div class="para-block">
+											<p>1. Deposit money through our shop:</p>
+											<p>Minimum deposit K 1.00</p>
+											<p>Maximum deposit K 100,000.00</p>
+											<p>Minimum withdraw K 1.00</p>
+											<p>Maximum withdraw K 777,000.00</p>
+											</div>
+											<br>
+											<h3>10. Privacy Policy</h3>
+											<p>10.1. You hereby acknowledge and accept that its is necessary for bolabet1x2.com to collect and otherwise store Your personal data in order to allow You access and use of the Website and in order to allow You to participate in Games. You hereby acknowledge and accept that all telephone calls made by you to bolabet1x2.com shall be recorded for Your own protection and benefit.</p>
+											<p>10.2. The Company hereby acknowledges that in collecting Your personal details as stated in the previous provision, We are bound by the Data Protection of the Laws of Zambia. The Company will protect your personal information and respect your privacy in accordance with best business practices and applicable laws.</p>
+											<p>10.3. bolabet1x2.com will only use Your personal data to allow you to participate in the Games and to carry out operations relevant to Your participation in the Games.</p> 
+											<p>10.4. Your personal data will not be disclosed to third parties, unless such disclosure is necessary for processing of your requests in relation to Your participation in the Games or unless it is required by law. You hereby consent to such disclosures. The disclosure of your information to any other third party will be done only if acknowledged by you.</p>
+											<p>10.5. You have the right to access personal data held by bolabet1x2.com about You.</p>
+											<p>10.6. In order to provide You with an efficient service, bolabet1x2.com and/or its service providers may require transferring your personal data from one country to another. You hereby consent to Your personal data being transferred in this manner.</p> 
+											<p>10.7. In the processing of Your Gaming Account and associated transactions, bolabet1x2.com may have recourse to credit rating agencies, fraud detection agencies, anti-money laundering agencies. You hereby consent to such disclosures.</p>
+											<h3>11. LEGAL DESPUTE</h3>
+											<p>11.1. Only the original English version of all regulations is valid in any legal dispute.</p>
+											<p>11.2. Players are entitled to refer any complaint they might have to the Lotteries and Gaming Authority of Zambia.</p>
+											<h3>12. CANCELATION, TERMINATION, SUSPENSION AND BREACH (TERMS APPLICABLE TO ALL BETS)</h3>
+											<p>12.1. Without restricting our ability to rely on other remedies that may be available to us, we may restrict your access to the Site, suspend or terminate your account or cancel any unmatched bets in our absolute discretion without cause at any time, including (without limitation) if:</p> 
+											<div class="para-block">
+											<p>(1.) we suspect that you are engaging in illegal, fraudulent or dishonest activity while using our site;</p> 
+											<p>(2.) we suspect you are breaching any term of this Agreement;</p> 
+											<p>(3.) there is a technological failure;</p> 
+											</div>
+											<br>
+											<p>12.2. In relation to any cancelled or void bets, we reserve the right to take any money from your account relating to these bets or, if there are insufficient funds in your account, demand that you pay us the relevant outstanding amount relating to these bets.</p> 
+											<p>12.3. On termination or suspension of your account, we reserve the right to withhold the funds in your account from you pending the determination of any investigation (including any relevant external investigation. Following the determination of any such investigation we reserve the right to seize the funds in your account should we be satisfied that you have acted in breach of this Agreement.</p>
+											<h3>13. BONUS TERMS & CONDITIONS</h3>
+											<p>13.1. The bonus money part of the stake is not included in any returns.</p> 
+											<p>13.2. Bonus account money cannot be exchanged for real account balance.</p>
+											<h3>14. bolabet1x2.com Gaming Ltd is regulated by the Lotteries and Gaming Authority of Zambia.</h3>
+											<p>14.1. bolabet1x2.com Gaming Ltd is not a Financial Institution.</p>
+											<h3>15. These terms and conditions shall be construed in accordance with the applicable Zambian Laws.</h3>
+											<h3>Restricted Territories</h3>
+											<p>We are unable to open accounts for individual residents in any other countries, except Zambia. Also, we reserve the right to request proof of residence from any persons at any time, to proof his identity and to confirm restricted territories before we do any transactions. It is the responsibility of each individual customer to ensure that they comply completely with their own local or national laws concerning betting, prior to them registering, or before placing a bet.
+											Rules</p>
+											<p>The expressions used in these Betting Rules on sports Events and the other Events (hereinafter "Rules") during betting organizing on sports events and the other events, have the following meaning :</p>
+											<p><b>BOOKMAKER:</b> Legal or individual person who organize Betting on sports events and the other events on the behalf of Company;</p>
+											<p><b>EVENT:</b> The Event is every future uncertain competition with measurable outcome ; </p>
+											<p><b>BETTING:</b> Investing, deposit money on some predicted outcome of Event , in which we can organize Betting in accordance with Law; Betting consists of accepting the Stake from the Customer under the conditions which Company suggests. </p>
+											<p><b>OFFER: The list of Events and theirs outcome with odds, which the Company suggests for Betting. </p>
+											<p><b>CUSTOMER:</b> Participant in Betting, the individual who accepted these Rules, fulfils conditions for participating and with investing money takes part in Betting; </p>
+											<p><b>STAKE:</b> Deposit, invested money in domestic currency which Customer pays to predict Outcome of Event </p>
+											<p><b>OUTCOME:</b> The result of Event for which according to Law, the Company organizes Betting and determines odds.</p> 
+											<p><b>TOTAL RETURN:</b> Total profit of Customers as a result of Betting, including the Stake; </p>
+											<p><b>PURE PROFIT - earning:</b> Sum which the Customer earns by Betting: TOTAL RETURN minus STAKE </p>
+											<p><b>PALPABLE ERROR:</b> Each mistake in Offer in connection with the exact Event ,concerning odds, participants, time and place of match, impossibility to check result accuracy, printing errors in Offer or any other reason for which Bookmaker estimate that affected on Betting regularity;</p> 
+											<p><b>DAILY RETURN:</b> It is profit on tickets which are accepted or paid on the same day ; </p>
+											<p><b>ANTEPOST BETTING:</b> It is betting on the Events which will be played after more than 15 days from the day when the Customer placed bets;</p> 
+											<p><b>REFUND:</b> Returning the Stake to the Customer ,in case that Betting was not valid at any reason; </p>
+											<p><b>VOID BETTING:</b> The situation when instead of already written odd on ticket, it counts odd 1 (for example: postponed match, cancelled match, incorrect event.) </p>
+											<p><b>ASSOCIATED BETTING (syndicate):</b> The series of the same or similar placed bets in the same day in one or more Bet Shops by more Customers in which Bookmaker suspect that they are joined to avoid limitations established in this Rules; </p>
+											<p><b>ODD:</b> Number which is multiplied with the Stake to calculate potential Total Return; </p>
+											<p><b>FAVORITE:</b> Team or player that according to Company has bigger chance to win (odd on favorite’s win is smaller ); </p>
+											<p><b>OUTSIDER:</b> Team or player that according to Company has smaller chance to win (odd on outsider’s win is bigger); </p>
+											<p><b>HOME:</b> Team or Player which is first listed in the Offer (mark 1.)-it do not need to be actually host of that Event; </p>
+											<p><b>AWAY:</b> Team or Player which is second listed in the Offer (mark 2.)- it do not need to be actually guest of that Event; </p>
+											<p><b>TOURNAMENT:</b> Competition-championship involving a large number of competitors, all participating in battle for the best placement; </p>
+											<p><b>DIVIDED ODDS:</b> Number which is multiplied with direct Odds to calculate payment for the placement, it is related only to tournament betting ; </p>
+											<p><b>PLACEMENT:</b> It is related only to Betting on Tournaments, where number of valid placements is declared by Bookmaker (for example: first, second, third place),and the Customer profits if his selection won placement he was betting for and which Bookmaker predicted for profit. </p>
+											<p><b>HANDICAP:</b> Advantage given to the outsider, to equal possible Outcome of Event and to increase value of Betting. Handicap is always added to achieve result first listed team/competition. </p>
+											<h3>OFFICIAL INFORMING SOURCES:</h3>
+											<div class="para-block">
+											<p>1. Official website of the organizer</p>
+											<p>2. Official website of the host</p>
+											<p>3. Official site of the home team</p>
+											<p>4. Official site of the away team. Livescore internet sites are not official and relevant during settling the Events. If there are different information, for official is taken result which is the first in already quoted hierarchy (at first official site of the organizer, than official site of the host …)</p>
+											</div>
+											<br>
+											<h3>ACT 1.</h3>
+											<p>According to these Rules, Company organizes special Games on Chance - in which Betting on Event could be organized in accordance with Law.</p>
+											<h3>ACT 2.</h3>
+											<p>The purpose of betting is predicting Outcome of Event in the country and abroad which Bookmaker offers to participants in Betting.</p>
+											<h3>ACT 3.</h3>
+											<p>All persons older than 18 years, who accepts these Rules can participate in Betting on Events, regardless the gender, residence, nationality or any other physical or social feature. Login is forbidden for underage persons.</p>
+											<h3>ACT 4.</h3>
+											<p>Company employees can not participate in Betting or at Bookmaker`s, and also the other persons for whom this is forbidden by Law. 
+											Services which are provided by Bookmaker are based on correct relationship and efficient services of Betting on Events in following way: - Betting by internet</p>
+											<h3>ACT 5.</h3>
+											<p>With participating in Betting on Events, Customer accepts these Rules in general, all rights and liabilities which are established by Law. </p>
+											<p>In irregular situations, Company brings final decision.</p> 
+											<p>In case any kind of dispute between the Customer and the Bookmaker which could not be solved in peaceful way, jurisdiction is established by court.</p>
+											<h3>ACT 6.</h3>
+											<p>Betting is running according to the Bookmaker’s Offer, which contains Events, Markets and Selections. List Offer is published on Bolabet internet site and betting shops, and can be bought each Tuesday and Friday in all Bolabet shops. In case of Palpable Error in published Offer, connected to the odds, the time and place of the match and similar, the organizer retains the right to appoint the match as invalid for all play types, and the Odd 1 will be used. Customer will fill in the tickets for prediction of Events, and mark all important elements for participating in Betting. After depositing, the Customers are obliged to check their ticket(s) and deposits, to compare them with the ones they have written on the betting slip before leaving the counter. Subsequent complaints are not accepted by the Bookmaker, especially if the match on the ticket has already started. There is no possibility of cancellation of bets.</p>
+											<h3>ACT 7.</h3>
+											<p>Deposits for participating in Betting are received at Bet Shops, and Bookmaker reserves the right that he can in any moment without giving any explanation not to accept complete or partially Betting. Customer takes responsibility for confidentiality of his password and account number, which he was given when he joined. All stakes which are registered through server are valid. In case that account number or password become available to the third part, Customer immediately informs Bookmaker with request to change password and account number.</p>
+											<h3>ACT 8.</h3>
+											<p>Bookmaker reserves the right to establish limitations: minimal stake, maximum stake, maximum payouts and maximum Odds profit per ticket. </p>
+											<div class="para-block">
+											<p>Minimal stake per bet is K 2.00</p>
+											<p>Minimal stake per single bet is K 2.00</p>
+											<p>Minimal stake per combination is K 0.20</p>
+											<p>Maximum stake is K 10,000.00</p>
+											<p>Maximum payout per bet is K 777,000.00</p>
+											<p>Maximum daily profit per Customer is K 777,000.00</p>
+											</div>
+											<br>
+											<p>Bookmaker reserves the right to change any of these limitations, at any moment, as well as with competition and also individual for participants in Betting. 
+											<p>Bookmaker will indicate on any modification to the Customers in advance. If in a mix enter some Events with different limitations on maximum stake, than amount of maximum stake in this mix will be determined equally to minimal value. </p>
+											<p>Amount of maximum payout per combination is defined with limit for the league, sport or competition.</p>
+											<h3>ACT 9.</h3>
+											<p>Customers have responsibility to respect rule about minimal number of matches for every type of game, which will be posted in Offer by Bookmaker. 
+											In case of disrespect Rules from the paragraph 1.of this act, as in case when minimal amount of deposit per combination is not fulfilled, ticket will be void and the Customer will be refunded.</p>
+											<h3>ACT 10.</h3>
+											<p>There is no possibility to place bets for the same match in one combination more times, except if Bookmaker, in certain case, does not indicate different. 
+											If there is in the combination the same Event indicated more time, combination is considered as void, and the Customer will be refunded. </p>
+											<p>There is no possibility to repeat the same combination on more tickets. </p>
+											<p>The same combination is considered as repeated if at least 3 Events on ticket are not different.</p> 
+											<p>In case of disrespect Rules from the paragraph 3.of this act, each repeated ticket will be void and the Customer will be refunded.</p>
+											<h3>ACT 11.</h3>
+											<p>In case of Associated Betting, Bookmaker will declare that tickets as Void and the Customer who takes part in that will be refunded for that tickets.</p>
+											<h3>ACT 12.</h3>
+											<p>Payment can be made until the beginning of the first Event marked on ticket, except in case when the Bookmaker indicates different, as in the case Live Betting and Free Game. </p>
+											<p>Date and time of the Event beginning which is posted in the Offer is informal. As beginning of the Event is taken time posted at Official Informing Sources. 
+											In the situation when payment is done on Events which have already started or finished, except for Live Betting, Bookmaker reserves the right to settle that bets as Odd 1, except in cases when Bookmaker issued different.</p>
+											<h3>ACT 13.</h3>
+											<p>Winning combination is that in which there is no missed selection.</p>
+											<h3>ACT 14.</h3>
+											<p>Winnings are paid out to the Customers at the Betting Shops where the winning ticket was deposited. Winner ticket, which doesn’t have any adding’s or corrections, is the only proof of ID which Bolabet Company need for payment to be made. Bolabet Company Ltd shall not entertain any person(s) claiming to have misplaced or lost their ticket. Please insure that ticket is kept safe.</p>
+											<h3>ACT 15.</h3>
+											<p>Bolabet Company guarantee payout winnings during Betting on Events, in accordance with these Rules and determined terms, especially with act 11.</p>
+											<h3>ACT 16.</h3>
+											<p>Payout will be completed immediately after announcement of official Outcomes, at latest in term of 30 days from the day of announcement official Outcomes if there are some questionable Outcomes. </p>
+											<p>All Bookmaker`s obligation to Betting winner stop at the moment when winner gets winning prize or person who is accredited by him, or expiration date from previous paragraph of this act. If Betting winner does not appear in the expiration period (30 days) for the payout, it will be regarded as though he had given up the payout and the Bookmaker retains the right not to make the payout after the expiration period.</p>
+											<h3>ACT 17.</h3>
+											<p>Official Outcome of Event is the Outcome achieved at sports court in regular course of the game and published on Official Informing Sources. 
+											Extensions and penalties are not considered as regular course of the game, not additional results modifications (for example: Disqualification and so on), except the Bookmaker does not indicate different. </p>
+											<p>Achieved result of the Event or match is valid despite the fact who is home of Event.</p>
+											<h3>ACT 18.</h3>
+											<p>Games definitions and Sports Rules: </p>
+											<p>Section:<a href=""> PLAY TYPES</a></p>
+											<p>All bets will be settled as void on matches that are Abandoned/Postponed/Rearranged to play, unless the match is rescheduled to play within the following calendar day of the original starting time.</p> 
+											<p>If the match is abandoned during the 1st half, and match is not rescheduled to play within the following calendar day then all bets which are not concluded will be settled as void. </p>
+											<p>Under the concluded game (winning or non-winning) is considered to be one game where the result would not change if the game was played to the end. </p>
+											<p>If the match is abandoned after the 1st half has been finished, and match in not rescheduled to play within following calendar day then all bets which are concluded will be settled according to the result that was achieved at the abandoned moment, bets which are not concluded will be settled as void, and games Final</p> <p>Result and Double chance will be settled according to the result that was achieved at the abandoned moment.</p>
+											<h3>ACT 19.</h3>
+											<h3>LIVE BETTING</h3>
+											<p>This is type of betting where customer bets on some Event while it is in running .There is possibility to bet on all sports and Events already mentioned in this text. </p>
+											<p>Schedule for live betting is susceptible to change due to change in broadcast schedule. </p>
+											<p>Live betting may be interrupted in the course of play due to any kind of failure to follow the broadcast or for any other technical reason. </p>
+											<p>All bets which are accepted until the moment of interruption are valid. </p>
+											<p>Ticket can be cancelled only until the moment of first Odd change for played tip. </p>
+											<p>In live betting, on all sports and events at the moment of interruption following rule applies: </p>
+											<p>All bets will be settled as void on matches that are Abandoned/Postponed/Rearranged to play, unless the match is rescheduled to play within the following calendar day of the original starting time. </p>
+											<p>All bets which are concluded will be settled according to the result that was achieved at the abandoned moment, only when first half finished. </p>
+											<p>Bets whose outcome may not be changed are valid. Example (if the match is interrupted at result 2:1 bet at 0-2 goals is unwinning, bet at 3+ goals is winning and bet at 4+ goals is counted with quote 1) </p>
+											<p>Bookmaker can offer a bet which is not in standard offer if its outcome can be measured and if there is a clear source in which we can read result of such a bet. </p>
+											<p>In case of palpable error , connected to the odds, the time and place of the match and similar, the Bookmaker retains the right to appoint the match as invalid for all play types, and the Odd 1 (one) is used.</p>
+											<h3>ACT 20.</h3>
+											<h3>EMPTY BET</h3>
+											<p>Empty bet is a form of betting where the Customer comes up with game on which he wants to bet and suggests it to the Bookmaker. </p>
+											<p>If suggested game is related to some Event which is not in Offer and has not started yet, but the game is defined, according to Bolabet rules such a game completely belongs to standard rules. </p>
+											<p>If suggested game is related to some Event which started in the moment of placing bets, such a bet belongs to live betting. 
+											Customer can offer a bet which is not in standard offer if outcome of that bet can be measured and if there is a clear source in which we can read result such a bet.</p>
+											<h3>ACT 21.</h3>
+											<p>Bookmaker has the right to offer some other sports and Events if theirs outcome is clearly measurable and if there are clearly results. Terms under that bets are accepted are the same as rules for standard bets (Listed in Article 18) and if there are games which are not defined in the article 18. Bookmaker is obligated to publish additional rules with definition in Bet shops and in the Offer.</p>
+											<h3>ACT 22.</h3>
+											<p>Bookmaker can interrupt Betting if there are some unpredictable circumstances that could not be avoided or removed and in which Bookmaker could not have any effect under procedure defined by law. </p>
+											<p>In case of palpable error, Bookmaker has right to announce that outcome (result, match) as void for all types of game or to stop payment until the end of the debate (including judicial).</p>
+											<h3>ACT 23.</h3>
+											<p>For liability to the participants, Bookmaker uses all his means.</p>
+											<h3>ACT 24.</h3>
+											<p>Bookmaker has right to change Odds published in the offer at any moment. Odds at the moment of payment (written on tickets) are valid for both, Bookmaker and Customer except in case of Palpable error. Betting conditions (odds, coefficient, totals, limits on multiple betting and similar) can be change after each Betting, but terms of previous Betting stays unchanged..</p>
+											<h3>ACT 25.</h3>
+											<p>These rules will be placed clearly on visible places at all deposit places of the Bookmaker. </p>
+											<p>It is considered that every Customer is familiar with these Rules and accepts it without any reserve.</p>
+											<h3>ACT 26.</h3>
+											<p>These Rules could be changed according to the same procedure that applies to their adoption. </p>
+											<p>Customers are notified about Rules changes with appropriate notice placed on all deposit places. </p>
+											<p>Changes and supplements are valid from the date which stands in notice. </p>
+											<p>Stakes which are accepted started with date marked in noticement fall under the changed rules. </p>
+											<p>Terms of earlier received stakes will remain unchanged.</p>
+									</div>
+								
+								
+							</div>
+							<div class="block-heading1">
+								<h3>More Question...</h3>
+							</div>							
+							<div class="block-heading1-content">
+								<div class="block-content">
+									<a href="#">
+										<h3>Contact</h3>
+										<p>If you have any questions, do not hesitate to contact us</p>
+									</a>
+								</div>
+							</div>
+							<div class="block-heading1-content">
+								<div class="block-content">
+									<a href="#">
+										<h3>Terms and conditions</h3>
+										<p>Every person who creates an online user account at Bolabet does so in accordance with the terms, rule book and laws</p>
+									</a>
+								</div>
+							</div>
+							<div class="block-heading1-content">
+								<div class="block-content">
+									<a href="#">
+										<h3>Rule Book</h3>
+										<p>Rule book of betting with Bolabet</p>
+									</a>
+								</div>
+							</div>
+							<div class="block-heading1-content">
+								<div class="block-content">
+									<a href="#">
+										<h3>Betshop Locations</h3>
+										<p>Find nearest Bolabet betshop </p>
+									</a>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>	
+	
+    
+
+    <footer>
+        <div class="footer-main">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Legal</h6>
+                    </div>
+                    <ul>
+                        <li><a href="termsandconditions.html">Terms & Condition</a></li>
+                        <li><a href="rules.html">Rules</a></li>
+                        <li><a href="restricted-territories.html">Restricted Territories</a></li>
+                        <li><a href="responsible-gambling.html">Responsible Gambling</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Bolabet1x2</h6>
+                    </div>
+                    <ul>
+                        <li><a href="betshop-location.html">Betshop Locations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="promotions.html">Promotions</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Help</h6>
+                    </div>
+                    <ul>
+                        <li><a href="deposite.html">Deposits</a></li>
+                        <li><a href="withdrawal.html">Withdrawals</a></li>
+                        <li><a href="playtype.html">Play Types</a></li>
+                        <li><a href="#">Sport Book</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Social Networks</h6>
+                    </div>
+                    <div class="footer-social">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="footer-copy">
+            <p>&#169; 2018 All Right Reserved. Bolabet1x2.com</p>
+        </div>
+        <div class="clearfix"></div>
+    </footer>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<!--<script src="js/jquery-3.3.1.slim.min.js"></script>-->
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    function acceptoodone(id)
+    {
+     var getdata=$('#'+id).html();
+     $('#odd-option-selected').html(getdata);
+     $('#bet-confirm').removeClass('show');
+     $('.bet-confirm-btn').addClass('collapsed');
+    }
+	function oddunit(id)
+    {
+     var getdata=$('#'+id).html();
+     $('#oddunit-selected').html(getdata);
+    }
+	function langselect(id)
+    {
+     var getdata=$('#'+id).html();
+     $('#lang-selected').html(getdata);
+    }
+</script>
+</body>
+</html>

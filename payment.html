@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="images/fav.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/feather.min.css">
+    <link rel="stylesheet" href="css/icofont.min.css">
+	<link rel="stylesheet" href="css/line-awesome.min.css">
+	<link rel="stylesheet" href="css/glyphicon.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+    <title>Bolabet 1X2</title>
+</head>
+<body>
+    <div class="header">
+		<div class="header-top">
+			<ul class="headtop-links float-left">
+				<li><a href="help.html">Help</a></li>
+				<li><a href="#">Live Support</a></li>
+				<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+			<ul class="headtop-links float-right">
+				<li><a href="howtoplay.html">How to play</a></li>
+				<li><a href="payment.html">Payments</a></li>
+				<li><a href="#">My Bets</a></li>
+				<li><a href="playtype.html">Play types</a></li>
+				<li><a href="promotions.html">Promotions</a></li>
+				<!--li><a href="mobileapp.html">Mobile Application</a></li-->
+				<li><a href="coupons.html">Coupons</a></li>
+				<li>
+					<div class="headtop-drop">
+						<div class="headtop-drop-arrow">
+							<i class="la la-angle-right"></i>
+						</div>
+						Odds <span class="headtop-drop-value" id="oddunit-selected">Decimal</span>
+						<div class="headtop-child">
+							<div class="headtop-child-item">
+								<label onclick="oddunit('unitdec')">
+									<input type="radio" name="oddunit" checked="checked">
+									<span id="unitdec">Decimal</span>
+								</label>
+							</div>
+							<div class="headtop-child-item">
+								<label onclick="oddunit('unitfrac')">
+									<input type="radio" name="oddunit">
+									<span id="unitfrac">Fractional</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="headtop-drop">
+						<div class="headtop-drop-arrow">
+							<i class="la la-angle-right"></i>
+						</div>
+						Language <span class="headtop-drop-value" id="lang-selected">English</span>
+						<div class="headtop-child">
+							<div class="headtop-child-item">
+								<label onclick="langselect('lang-eng')">
+									<input type="radio" name="lang-name" checked="checked">
+									<div class="float-left lang-flag"><img src="images/eng-flag.jpg" alt=""/></div>
+									<span id="lang-eng">English</span>
+								</label>
+							</div>
+							<div class="headtop-child-item">
+								<label onclick="langselect('lang-ger')">
+									<input type="radio" name="lang-name">
+									<div class="float-left lang-flag"><img src="images/eng-flag.jpg" alt=""/></div>
+									<span id="lang-ger">German</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li><a class="head-time" href="#">16:14 GMT+2</a></li>
+			</ul>
+		</div>
+		<div class="header-main">
+			<div class="logo-wrapper">
+			   <a href="index.html"> <img src="images/logo.png" alt=""></a>
+			</div>
+			<div class="header-category">
+				<button onclick="menulist()"><i class="ft-menu"></i></button>
+				<ul id="head-menu">
+					<li>
+						<a class="category-sport active" href="index.html">Sports Betting</a>
+					</li>
+					<li>
+						<a class="category-livebet"href="livebet.html">Live Betting</a>
+					</li>
+					<li>
+						<a class="category-virtual" href="#">Virtuals</a>
+					</li>
+				</ul>
+				<script>
+					function menulist() {
+						if(document.getElementById('head-menu').style.display == "block"){ 
+							document.getElementById('head-menu').style.display = "none";
+						}
+						else if(document.getElementById('head-menu').style.display == "none"){
+							document.getElementById('head-menu').style.display = "block";
+						}
+						else{
+							document.getElementById('head-menu').style.display = "block";
+						}
+					}
+				</script>
+			</div>
+			<div class="header-login">
+				<ul>
+					<li><a href="registration.html" class="header-reg-btn">Register</a></li>
+					<li><input type="text" placeholder="Email or Phone No."></li>
+					<li><input type="text" placeholder="Password"><br><a href="#" onclick="forgotpassFunction()" class="head-forget-pass">Forgot Password ?</a></li>
+					<li><a href="login.html" class="header-login-btn">Login</a></li>
+				</ul>
+				
+			</div>
+			<div class="forgotpass-popup" id="forgotpass-block" style="display:none;">
+				<div class="forgotpass-content">
+					<div class="forgotpassclose" onclick="forgotpassclose()"><i class="ft-x"></i></div>
+					<h4>Forgot Password?</h4>
+					<div class="form-group">
+						<label>Enter Email ID:</label>
+						<div class="form-input">
+							<input class="form-control" type="email" placeholder="abc@xyz.com">
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="mb-3">Please enter an E-mail address you registered your account with and we will send you a link with link to reset your password</div>
+					<div class="forgotpass-submit">
+						<button onclick="forgotpassclose()">Cancel</button>
+						<input type="submit" value="Reset Password">
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<script>
+				function forgotpassFunction() {
+					if(document.getElementById('forgotpass-block').style.display == "none"){ 
+						document.getElementById('forgotpass-block').style.display = "block";
+					}
+					else{ 
+						document.getElementById('forgotpass-block').style.display = "none";
+					}
+				}
+				function forgotpassclose() {
+					if(document.getElementById('forgotpass-block').style.display == "block"){ 
+						document.getElementById('forgotpass-block').style.display = "none";
+					}
+				}
+			</script>
+			<div class="clearfix"></div>
+		</div>
+        <div class="clearfix"></div>
+    </div>
+	<div class="content-body">
+        <div class="container">
+            <div class="payment-block">
+                <ul class="nav nav-tabs" id="payment-item" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active show" id="deposit-tab" data-toggle="tab" href="#deposit" role="tab" aria-controls="deposit" aria-selected="true">Deposit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="withdraw-tab" data-toggle="tab" href="#withdraw" role="tab" aria-controls="withdraw" aria-selected="false">Withdraw</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="paymentContent">
+                    <div class="tab-pane fade active show" id="deposit" role="tabpanel" aria-labelledby="deposit-tab">
+                        <div class="payment-method">
+                            <div class="payment-vertical-item">
+                                <ul class="nav nav-tabs" id="payment-method-tab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active show" id="payment-method-tab" data-toggle="tab" href="#payment-method" role="tab" aria-controls="payment-method" aria-selected="true">Payment Method</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="cash-tab" data-toggle="tab" href="#cash" role="tab" aria-controls="cash" aria-selected="false"><img src="images/payment-cash.png" alt=""></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="mtn-tab" data-toggle="tab" href="#mtn" role="tab" aria-controls="mtn" aria-selected="false"><img src="images/payment-mtn-mob.png" alt=""></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="fnb-bank-tab" data-toggle="tab" href="#fnb-bank" role="tab" aria-controls="fnb-bank" aria-selected="false"><img src="images/payment-fnb.png" alt=""></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="airtel-tab" data-toggle="tab" href="#airtel" role="tab" aria-controls="airtel" aria-selected="false"><img src="images/payment-airtel.png" alt=""></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="zamtel-tab" data-toggle="tab" href="#zamtel" role="tab" aria-controls="zamtel" aria-selected="false"><img src="images/payment-zamtel.png" alt=""></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="touch4pay-tab" data-toggle="tab" href="#touch4pay" role="tab" aria-controls="touch4pay" aria-selected="false"><img src="images/payment-touch4pay.png" alt=""></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="fnb-wallet-tab" data-toggle="tab" href="#fnb-wallet" role="tab" aria-controls="fnb-wallet" aria-selected="false"><img src="images/payment-fnb.png" alt=""></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="mtn-mob-tab" data-toggle="tab" href="#mtn-mob" role="tab" aria-controls="mtn-mob" aria-selected="false"><img src="images/payment-mtn-mob.png" alt=""></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="nsano-tab" data-toggle="tab" href="#nsano" role="tab" aria-controls="nsano" aria-selected="false"><img src="images/payment-nsano.png" alt=""></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="payment-vertical-content">
+                                <div class="tab-content" id="payment-methodContent">
+                                    <div class="tab-pane fade active show" id="payment-method" role="tabpanel" aria-labelledby="payment-method-tab">
+                                        <div class="payment-method-table">
+                                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Fee</th>
+                                                    <th>Process Time</th>
+                                                    <th>Min</th>
+                                                    <th>Max</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cash</td>
+                                                    <td>Free</td>
+                                                    <td>Instant</td>
+                                                    <td>1</td>
+                                                    <td>10000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>MTN</td>
+                                                    <td>Free</td>
+                                                    <td>Instant</td>
+                                                    <td>1</td>
+                                                    <td>10000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>FNB Bank Transfer</td>
+                                                    <td>Free</td>
+                                                    <td>Instant</td>
+                                                    <td>1</td>
+                                                    <td>10000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Airtel</td>
+                                                    <td>Free</td>
+                                                    <td>Instant</td>
+                                                    <td>1</td>
+                                                    <td>10000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Zamtel</td>
+                                                    <td>Free</td>
+                                                    <td>Instant</td>
+                                                    <td>1</td>
+                                                    <td>10000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Touch4Pay</td>
+                                                    <td>Free</td>
+                                                    <td>Instant</td>
+                                                    <td>1</td>
+                                                    <td>10000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>FNBeWALLET</td>
+                                                    <td>Free</td>
+                                                    <td>Instant</td>
+                                                    <td>1</td>
+                                                    <td>10000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>MTN Mobile Money</td>
+                                                    <td>Free</td>
+                                                    <td>Less than 10 minutes</td>
+                                                    <td>1</td>
+                                                    <td>10000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Nsano</td>
+                                                    <td>Free</td>
+                                                    <td>Instant</td>
+                                                    <td>1</td>
+                                                    <td>10000</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="cash" role="tabpanel" aria-labelledby="cash-tab">
+                                        <div class="payment-method-detail">
+                                            <p>To deposit money you should tell the bookmaker-cashier your Castlebet account number which you were granted after the registration on our website.</p>
+                                            <p>The addresses of betting offices where you can deposit cash money.</p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="mtn" role="tabpanel" aria-labelledby="mtn-tab">
+                                        <div class="payment-method-detail">
+                                            <p>Automatic Instant MTN Mobile Money Deposit option:</p>
+                                            <p>
+                                                Step 1: Enter the amount you wish to transfer from your MTN Mobile Money wallet to your Castlebet betting wallet.<br>
+                                                Step 2: Press the Deposit button.<br>
+                                                Step 3: Enter your 5-digit MTN mobile Money on the white popup screen when prompted.<br>
+                                                Step 4: Your deposit will reflect on your Castlebet balance within 1 second!
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="fnb-bank" role="tabpanel" aria-labelledby="fnb-bank-tab">
+                                        <div class="payment-method-detail">
+                                            <p>
+                                                Please visit any FNB branch and request to make a cash deposit to the<br>
+                                                following account, or transfer money to the account below from your any<br>
+                                                Zambian bank which offers you online banking:
+                                            </p>
+                                            <p>
+                                                Account Name: Castlebet Zambia Ltd<br>
+                                                Account Number: 62742522263<br>
+                                                Branch Name &amp; Number: MANDA HILL 260014<br>
+                                                Swift Code: FIRNZMLX
+                                            </p>
+                                            <p>
+                                                Please keep your deposit slip and send us a photograph of the image&nbsp;<br>
+                                                via whatsapp or facebook messenger from your registered Castlebet&nbsp;<br>
+                                                Username phone number.
+                                            </p>
+                                            <p>The funds will be added to your gaming wallet as soon as the money has cleared to the Castlebet Business Bank Account.</p>
+                                            <p>Good luck!</p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="airtel" role="tabpanel" aria-labelledby="airtel-tab">
+                                        <div class="payment-method-detail">
+                                            <p>OPTION A: Visit any Airtel money kiosk and ask them to send funds direct to phone number 0979 62 5555.</p>
+                                            <p>(Don’t forget to give the agent your Castlebet username/registered phone number when the agent asks you for what reference to put on the payment.)</p>
+                                            <p>OPTION B:</p>
+                                            <p>(Fastest &amp; best if your phone is already registered with Airtel Money):</p>
+                                            <p>Step 1: DIAL *778#</p>
+                                            <p>Step 2: SELECT OPTION 4, MAKE PAYMENT.</p>
+                                            <p>Step 3: SELECT OPTION 5, GOODS AND SERVICES</p>
+                                            <p>Step 4: SELECT "ENTER BUSINESS NAME":<br>
+                                            TYPE cbet (this is Castlebet's merchant ID.)</p>
+                                            <p>Step 5: ENTER AMOUNT (how much Kwacha you want to deposit from mobile money to castlebet)</p>
+                                            <p>Step 6: ENTER REFERENCE (this is your account number/phone number registered with Castlebet)</p>
+                                            <p>Step 7: ENTER YOUR AIRTEL MOBILE MONEY PIN<br>
+                                            You will receive an SMS confirming your deposit to Castlebet.</p>
+                                            <p>After a few moments, log into your Castlebet account and check that your balance has updated</p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="zamtel" role="tabpanel" aria-labelledby="zamtel-tab">
+                                        <div class="payment-method-detail">
+                                            <p>OPTION 1: Visit any Zamtel kwacha Mobile Money kiosk and ask them to send funds direct to phone number 0955058281.</p>
+                                            <p>PLEASE NOTE: Remember to give the agent your Castlebet username/registered phone number when the agent asks you for a reference to put on the payment.</p>
+                                            <p>Tha above method can be used by any Castlebet client even if they do NOT have a Zamtel line or are not registered for Zamtel Kwacha.)</p>
+                                            <p>OPTION 2:</p>
+                                            <p>(Fastest &amp; best if your phone is already registered with Zamtel Kwacha):</p>
+                                            <p>Step 1: DIAL *344#</p>
+                                            <p>Step 2: SELECT OPTION 1, (SEND MONEY TO)</p>
+                                            <p>Step 3: ENTER MOBILE NUMBER, (input CASTLEBET Deposit line 0955058281)</p>
+                                            <p>Step 4: ENTER AMOUNT (of Kwacha which you wish to deposit to your Castlebet wallet).</p>
+                                            <p>Step 5: ENTER YOUR Zamtel Kwacha PIN</p>
+                                            <p>Step 6: FINALLY ACCEPT WITH OPTION 1<br>
+                                            You will receive SMS confirming your deposit to Castlebet.</p>
+                                            <p>Please note,the funds should reflect into your Castlebet online account within a few moments.</p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="touch4pay" role="tabpanel" aria-labelledby="touch4pay-tab">
+                                        <div class="payment-method-detail">
+                                            <p>Deposit instructions should be as follows:</p>
+                                            <p>How do I deposit money to my Castlebet account via Touch 4 Pay kiosks?</p>
+                                            <p>STEP 1: FIND A NEARBY Touch4Pay KIOSK.</p>
+                                            <p>(The kiosks are purple in colour and often used by customers to top up Zesco vouchers etc. They are found in busy Ccasinos/shopping malls &amp; supermarkets such as Pick N Pay.</p>
+                                            <p>STEP 2: PRESS THE CASTLEBET BUTTON ON SCREEN.</p>
+                                            <p>STEP 3: ENTER YOUR PHONE NUMBER ON THE KIOSK SCREEN.&nbsp;</p>
+                                            <p>(The phone number you enter should be the same number you registered as your Castlebet username when you joined the service.)</p>
+                                            <p>STEP 4: INSERT BANK NOTES INTO THE MACHINE.</p>
+                                            <p>STEP 5: LOGON TO YOUR CASTLEBET ACCOUNT ON YOUR PHONE AND CHECK YOUR DEPOSIT HAS REFLECTED.</p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="fnb-wallet" role="tabpanel" aria-labelledby="fnb-wallet-tab">
+                                        <div class="payment-method-detail">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="mtn-mob" role="tabpanel" aria-labelledby="mtn-mob-tab">
+                                        <div class="payment-method-detail">
+                                            <p>OPTION A: Visit any yellow MTN Mobile Money kiosk and ask them to send funds direct to phone number 0960709514 (Don’t forget to give the agent your Castlebet username/registered phone number when the agent asks you for what reference to put on the payment.)</p>
+
+                                            <p>Option B: if your MTN line is already registered/active with MTN Mobile Money):</p>
+
+                                            <p>
+                                                Step 1: DIAL *303#<br>
+                                                Step 2: SELECT OPTION 2, PAY BILL<br>
+                                                Step 3: SELECT OPTIONS 3, GOODS AND SERVICES<br>
+                                                Step 4: ENTER MERCHANT ID<br>
+                                                Step 5: TYPE cbet<br>
+                                                Step 6: ENTER AMOUNT<br>
+                                                Step 7: ENTER REFERENCE (this is your account number/phone number registered with Castlebet)<br>
+                                                Step 8: ENTER PIN TO CONFIRM<br>
+                                                (Finally, You will receive SMS confirming your deposit to Castlebet.)"
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nsano" role="tabpanel" aria-labelledby="nsano-tab">
+                                        <div class="payment-method-detail">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="tab-pane fade" id="withdraw" role="tabpanel" aria-labelledby="withdraw-tab">
+                        <div class="payment-method">
+                            <div class="payment-vertical-item">
+                                <ul class="nav nav-tabs" id="payment-method-tab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active show" id="wd-payment-method-tab" data-toggle="tab" href="#wd-payment-method" role="tab" aria-controls="wd-payment-method" aria-selected="true">Payment Method</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="wd-cash-tab" data-toggle="tab" href="#wd-cash" role="tab" aria-controls="wd-cash" aria-selected="false"><img src="images/payment-cash.png" alt=""></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="wd-mtn-tab" data-toggle="tab" href="#wd-mtn" role="tab" aria-controls="wd-mtn" aria-selected="false"><img src="images/payment-mtn-mob.png" alt=""></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="wd-airtel-tab" data-toggle="tab" href="#wd-airtel" role="tab" aria-controls="wd-airtel" aria-selected="false"><img src="images/payment-airtel.png" alt=""></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="wd-mtn-mob-tab" data-toggle="tab" href="#wd-mtn-mob" role="tab" aria-controls="wd-mtn-mob" aria-selected="false"><img src="images/payment-mtn.png" alt=""></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="wd-bank-tab" data-toggle="tab" href="#wd-bank" role="tab" aria-controls="wd-bank" aria-selected="false"><img src="images/payment-bank-transfer.png" alt=""></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="wd-fnb-bank-tab" data-toggle="tab" href="#wd-fnb-bank" role="tab" aria-controls="wd-fnb-bank" aria-selected="false"><img src="images/payment-fnb.png" alt=""></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="wd-zoona-tab" data-toggle="tab" href="#wd-zoona" role="tab" aria-controls="wd-zoona" aria-selected="false"><img src="images/payment-zoona.png" alt=""></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="wd-nsano-tab" data-toggle="tab" href="#wd-nsano" role="tab" aria-controls="wd-nsano" aria-selected="false"><img src="images/payment-nsano.png" alt=""></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="wd-zamtel-tab" data-toggle="tab" href="#wd-zamtel" role="tab" aria-controls="wd-zamtel" aria-selected="false"><img src="images/payment-zamtel.png" alt=""></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="wd-fnb-wallet-tab" data-toggle="tab" href="#wd-fnb-wallet" role="tab" aria-controls="wd-fnb-wallet" aria-selected="false"><img src="images/payment-fnb-wallet.png" alt=""></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="payment-vertical-content">
+                                <div class="tab-content" id="payment-methodContent">
+                                    <div class="tab-pane fade active show" id="wd-payment-method" role="tabpanel" aria-labelledby="wd-payment-method-tab">
+                                        <div class="payment-method-table">
+                                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Fee</th>
+                                                    <th>Process Time</th>
+                                                    <th>Min</th>
+                                                    <th>Max</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cash</td>
+                                                    <td>Free</td>
+                                                    <td>Less than 10 minutes</td>
+                                                    <td>20</td>
+                                                    <td>10000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>MTN</td>
+                                                    <td>Free</td>
+                                                    <td>Less than 10 minutes</td>
+                                                    <td>20</td>
+                                                    <td>10000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Airtel</td>
+                                                    <td>Free</td>
+                                                    <td>Less than 10 minutes</td>
+                                                    <td>20</td>
+                                                    <td>10000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>MTN Zambia</td>
+                                                    <td>Free</td>
+                                                    <td>Less than 10 minutes</td>
+                                                    <td>20</td>
+                                                    <td>10000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Bank Transfer</td>
+                                                    <td>Free</td>
+                                                    <td>Less than 10 minutes</td>
+                                                    <td>20</td>
+                                                    <td>10000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>FNB ATM</td>
+                                                    <td>Free</td>
+                                                    <td>Less than 10 minutes</td>
+                                                    <td>20</td>
+                                                    <td>10000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Zoona</td>
+                                                    <td>Free</td>
+                                                    <td>Less than 10 minutes</td>
+                                                    <td>20</td>
+                                                    <td>10000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Nsano</td>
+                                                    <td>Free</td>
+                                                    <td>12</td>
+                                                    <td>1</td>
+                                                    <td>10000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Zamtel</td>
+                                                    <td>Free</td>
+                                                    <td>Less than 10 minutes</td>
+                                                    <td>20</td>
+                                                    <td>10000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>FNBeWALLET</td>
+                                                    <td>Free</td>
+                                                    <td>Less than 10 minutes</td>
+                                                    <td>20</td>
+                                                    <td>10000</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="wd-cash" role="tabpanel" aria-labelledby="wd-cash-tab">
+                                        <div class="payment-method-detail">
+                                            1
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="wd-mtn" role="tabpanel" aria-labelledby="wd-mtn-tab">
+                                        <div class="payment-method-detail">
+                                           2
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="wd-airtel" role="tabpanel" aria-labelledby="wd-airtel-tab">
+                                        <div class="payment-method-detail">
+                                            3
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="wd-mtn-mob" role="tabpanel" aria-labelledby="wd-mtn-mob-tab">
+                                        <div class="payment-method-detail">
+                                            4
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="wd-bank" role="tabpanel" aria-labelledby="wd-bank-tab">
+                                        <div class="payment-method-detail">
+                                            5
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="wd-fnb-bank" role="tabpanel" aria-labelledby="wd-fnb-bank-tab">
+                                        <div class="payment-method-detail">
+                                            6
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="wd-zoona" role="tabpanel" aria-labelledby="wd-zoona-tab">
+                                        <div class="payment-method-detail">
+                                            8
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="wd-nsano" role="tabpanel" aria-labelledby="wd-nsano-tab">
+                                        <div class="payment-method-detail">
+                                            10
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="wd-zamtel" role="tabpanel" aria-labelledby="wd-zamtel-tab">
+                                        <div class="payment-method-detail">
+                                            7
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="wd-fnb-wallet" role="tabpanel" aria-labelledby="wd-fnb-wallet-tab">
+                                        <div class="payment-method-detail">
+                                            9
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-main">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Legal</h6>
+                    </div>
+                    <ul>
+                        <li><a href="termsandconditions.html">Terms & Condition</a></li>
+                        <li><a href="rules.html">Rules</a></li>
+                        <li><a href="restricted-territories.html">Restricted Territories</a></li>
+                        <li><a href="responsible-gambling.html">Responsible Gambling</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Bolabet1x2</h6>
+                    </div>
+                    <ul>
+                        <li><a href="betshop-location.html">Betshop Locations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="promotions.html">Promotions</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Help</h6>
+                    </div>
+                    <ul>
+                        <li><a href="deposite.html">Deposits</a></li>
+                        <li><a href="withdrawal.html">Withdrawals</a></li>
+                        <li><a href="playtype.html">Play Types</a></li>
+                        <li><a href="#">Sport Book</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Social Networks</h6>
+                    </div>
+                    <div class="footer-social">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="footer-copy">
+            <p>&#169; 2018 All Right Reserved. Bolabet1x2.com</p>
+        </div>
+        <div class="clearfix"></div>
+    </footer>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<!--<script src="js/jquery-3.3.1.slim.min.js"></script>-->
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    function acceptoodone(id)
+    {
+     var getdata=$('#'+id).html();
+     $('#odd-option-selected').html(getdata);
+     $('#bet-confirm').removeClass('show');
+     $('.bet-confirm-btn').addClass('collapsed');
+    }
+	function oddunit(id)
+    {
+     var getdata=$('#'+id).html();
+     $('#oddunit-selected').html(getdata);
+    }
+	function langselect(id)
+    {
+     var getdata=$('#'+id).html();
+     $('#lang-selected').html(getdata);
+    }
+</script>
+</body>
+</html>

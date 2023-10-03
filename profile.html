@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="images/fav.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/feather.min.css">
+    <link rel="stylesheet" href="css/icofont.min.css">
+	<link rel="stylesheet" href="css/line-awesome.min.css">
+	<link rel="stylesheet" href="css/glyphicon.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    
+    
+    <title>Bolabet 1X2</title>
+</head>
+
+<body>
+	<div class="header">
+		<div class="header-top">
+			<ul class="headtop-links float-left">
+				<li><a href="help.html">Help</a></li>
+				<li><a href="#">Live Support</a></li>
+				<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+			<ul class="headtop-links float-right">
+				<li><a href="howtoplay.html">How to play</a></li>
+				<li><a href="payment.html">Payments</a></li>
+				<li><a href="#">My Bets</a></li>
+				<li><a href="playtype.html">Play types</a></li>
+				<li><a href="promotions.html">Promotions</a></li>
+				<!--li><a href="mobileapp.html">Mobile Application</a></li-->
+				<li><a href="coupons.html">Coupons</a></li>
+				<li>
+					<div class="headtop-drop">
+						<div class="headtop-drop-arrow">
+							<i class="la la-angle-right"></i>
+						</div>
+						Odds <span class="headtop-drop-value" id="oddunit-selected">Decimal</span>
+						<div class="headtop-child">
+							<div class="headtop-child-item">
+								<label onclick="oddunit('unitdec')">
+									<input type="radio" name="oddunit" checked="checked">
+									<span id="unitdec">Decimal</span>
+								</label>
+							</div>
+							<div class="headtop-child-item">
+								<label onclick="oddunit('unitfrac')">
+									<input type="radio" name="oddunit">
+									<span id="unitfrac">Fractional</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="headtop-drop">
+						<div class="headtop-drop-arrow">
+							<i class="la la-angle-right"></i>
+						</div>
+						Language <span class="headtop-drop-value" id="lang-selected">English</span>
+						<div class="headtop-child">
+							<div class="headtop-child-item">
+								<label onclick="langselect('lang-eng')">
+									<input type="radio" name="lang-name" checked="checked">
+									<div class="float-left lang-flag"><img src="images/eng-flag.jpg" alt=""/></div>
+									<span id="lang-eng">English</span>
+								</label>
+							</div>
+							<div class="headtop-child-item">
+								<label onclick="langselect('lang-ger')">
+									<input type="radio" name="lang-name">
+									<div class="float-left lang-flag"><img src="images/eng-flag.jpg" alt=""/></div>
+									<span id="lang-ger">German</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li><a class="head-time" href="#">16:14 GMT+2</a></li>
+			</ul>
+		</div>
+		<div class="header-main">
+			<div class="logo-wrapper">
+			   <a href="index.html"> <img src="images/logo.png" alt=""></a>
+			</div>
+			<div class="header-category">
+				<button onclick="menulist()"><i class="ft-menu"></i></button>
+				<ul id="head-menu">
+					<li>
+						<a class="category-sport active" href="index.html">Sports Betting</a>
+					</li>
+					<li>
+						<a class="category-livebet"href="livebet.html">Live Betting</a>
+					</li>
+					<li>
+						<a class="category-virtual" href="#">Virtuals</a>
+					</li>
+				</ul>
+				<script>
+					function menulist() {
+						if(document.getElementById('head-menu').style.display == "block"){ 
+							document.getElementById('head-menu').style.display = "none";
+						}
+						else if(document.getElementById('head-menu').style.display == "none"){
+							document.getElementById('head-menu').style.display = "block";
+						}
+						else{
+							document.getElementById('head-menu').style.display = "block";
+						}
+					}
+				</script>
+			</div>
+			<div class="header-login">
+				<ul>
+					<li><a href="registration.html" class="header-reg-btn">Register</a></li>
+					<li><input type="text" placeholder="Email or Phone No."></li>
+					<li><input type="text" placeholder="Password"><br><a href="#" onclick="forgotpassFunction()" class="head-forget-pass">Forgot Password ?</a></li>
+					<li><a href="login.html" class="header-login-btn">Login</a></li>
+				</ul>
+				
+			</div>
+			<div class="forgotpass-popup" id="forgotpass-block" style="display:none;">
+				<div class="forgotpass-content">
+					<div class="forgotpassclose" onclick="forgotpassclose()"><i class="ft-x"></i></div>
+					<h4>Forgot Password?</h4>
+					<div class="form-group">
+						<label>Enter Email ID:</label>
+						<div class="form-input">
+							<input class="form-control" type="email" placeholder="abc@xyz.com">
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="mb-3">Please enter an E-mail address you registered your account with and we will send you a link with link to reset your password</div>
+					<div class="forgotpass-submit">
+						<button onclick="forgotpassclose()">Cancel</button>
+						<input type="submit" value="Reset Password">
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<script>
+				function forgotpassFunction() {
+					if(document.getElementById('forgotpass-block').style.display == "none"){ 
+						document.getElementById('forgotpass-block').style.display = "block";
+					}
+					else{ 
+						document.getElementById('forgotpass-block').style.display = "none";
+					}
+				}
+				function forgotpassclose() {
+					if(document.getElementById('forgotpass-block').style.display == "block"){ 
+						document.getElementById('forgotpass-block').style.display = "none";
+					}
+				}
+			</script>
+			<div class="clearfix"></div>
+		</div>
+        <div class="clearfix"></div>
+    </div>
+	<div class="content-body">
+        <div class="container">
+            <div class="profile-wrapper">
+                <div class="main-tabs">
+                    <ul class="nav nav-tabs" id="main-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active show" id="profile-block-tab" data-toggle="tab" href="#profile-block" role="tab" aria-controls="profile-block" aria-selected="true">
+								<div class="maintab-icon"><i class="fas fa-user"></i></div>
+								<div class="maintab-title">
+									<div class="maintab-heading">My Account<span>ID: 64512354</span></div>
+									
+								</div>
+								<div class="clearfix"></div>
+							</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="balance-block-tab" data-toggle="tab" href="#balance-block" role="tab" aria-controls="balance-block" aria-selected="false">
+								<div class="maintab-icon"><i class="fas fa-wallet"></i></div>
+								<div class="maintab-title">
+									<div class="maintab-heading">Balance<span>20.30 ZMW</span></div>
+								</div>
+								<div class="clearfix"></div>
+							</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="mybet-tab-block" data-toggle="tab" href="#mybet-block" role="tab" aria-controls="mybet-block" aria-selected="false">
+								<div class="maintab-icon"><i class="fas fa-trophy"></i></div>
+								<div class="maintab-title">
+									<div class="maintab-heading">My Bet</div>
+								</div>
+								<div class="clearfix"></div>
+							</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="bonuse-block-tab" data-toggle="tab" href="#bonuse-block" role="tab" aria-controls="bonuse-block" aria-selected="false">
+								<div class="maintab-icon"><i class="fas fa-gift"></i></div>
+								<div class="maintab-title">
+									<div class="maintab-heading">Bonuses</div>
+								</div>
+								<div class="clearfix"></div>
+							</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="mainContent">
+                    <div class="tab-pane fade active show" id="profile-block" role="tabpanel" aria-labelledby="profile-block-tab">
+                        <div class="tab-block">
+                            <div class="profile-sub-tabs">
+                                <ul class="nav nav-tabs" id="profile-tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active show" id="personal-tab" data-toggle="tab" href="#personal" role="tab" aria-controls="personal" aria-selected="true">Personal Details</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="password-tab" data-toggle="tab" href="#password" role="tab" aria-controls="password" aria-selected="false">Change Password</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="timeout-tab" data-toggle="tab" href="#timeout" role="tab" aria-controls="timeout" aria-selected="false">Time-Out</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content" id="profileContent">
+                                <div class="tab-pane fade active show" id="personal" role="tabpanel" aria-labelledby="personal-tab">
+                                    <div class="personal-form">
+                                        <h4>Personal Details</h4>
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>ID:</label>
+                                                        <div class="personal-input">
+															<input type="text" class="form-control" disabled="" value="6421356">
+														</div>
+														<div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Username:</label>
+														<div class="personal-input">
+															<input type="" class="form-control" disabled="" value="354337685">
+														</div>
+														<div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>First Name:</label>
+														<div class="personal-input">
+															<input type="text" class="form-control" placeholder="Enter your name">
+														</div>
+														<div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Last Name:</label>
+														<div class="personal-input">
+															<input type="text" class="form-control"  placeholder="Enter your last name">
+														</div>
+														<div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Birth date:</label>
+														<div class="personal-input">
+															<div class="row">
+																<div class="col-md-4">
+																	<select class="form-control">
+																		<option value="" disabled="" selected="selected">Day</option>
+																		<option value="">1</option>
+																		<option value="">2</option>
+																		<option value="">3</option>
+																		<option value="">4</option>
+																		<option value="">5</option>
+																		<option value="">6</option>
+																		<option value="">7</option>
+																		<option value="">8</option>
+																		<option value="">9</option>
+																		<option value="">10</option>
+																		<option value="">11</option>
+																		<option value="">12</option>
+																		<option value="">13</option>
+																		<option value="">14</option>
+																		<option value="">15</option>
+																		<option value="">16</option>
+																		<option value="">17</option>
+																		<option value="">18</option>
+																		<option value="">19</option>
+																		<option value="">20</option>
+																		<option value="">21</option>
+																		<option value="">22</option>
+																		<option value="">23</option>
+																		<option value="">24</option>
+																		<option value="">25</option>
+																		<option value="">26</option>
+																		<option value="">27</option>
+																		<option value="">28</option>
+																		<option value="">29</option>
+																		<option value="">30</option>
+																		<option value="">31</option>
+																	</select>
+																</div>
+																<div class="col-md-4">
+																	<select class="form-control">
+																		<option value="" disabled="" selected="selected">Month</option>
+																		<option value="">January</option>
+																		<option value="">February</option>
+																		<option value="">March</option>
+																		<option value="">April</option>
+																		<option value="">May</option>
+																		<option value="">June</option>
+																		<option value="">July</option>
+																		<option value="">August</option>
+																		<option value="">September</option>
+																		<option value="">October</option>
+																		<option value="">November</option>
+																		<option value="">December</option>
+																	</select>
+																</div>
+																<div class="col-md-4">
+																	<select class="form-control">
+																		<option value="" disabled="" selected="selected">Year</option>
+																		<option value="">1920</option>
+																		<option value="">1921</option>
+																		<option value="">1922</option>
+																		<option value="">1923</option>
+																		<option value="">1924</option>
+																		<option value="">1925</option>
+																		<option value="">1926</option>
+																		<option value="">1927</option>
+																		<option value="">1928</option>
+																		<option value="">1929</option>
+																		<option value="">1930</option>
+																		<option value="">1931</option>
+																		<option value="">1932</option>
+																		<option value="">1933</option>
+																		<option value="">1934</option>
+																		<option value="">1935</option>
+																		<option value="">1936</option>
+																		<option value="">1937</option>
+																		<option value="">1938</option>
+																		<option value="">1939</option>
+																		<option value="">1940</option>
+																		<option value="">1941</option>
+																		<option value="">1942</option>
+																		<option value="">1943</option>
+																		<option value="">1944</option>
+																		<option value="">1945</option>
+																		<option value="">1946</option>
+																		<option value="">1947</option>
+																		<option value="">1948</option>
+																		<option value="">1949</option>
+																		<option value="">1950</option>
+																		<option value="">1951</option>
+																		<option value="">1952</option>
+																		<option value="">1953</option>
+																		<option value="">1954</option>
+																		<option value="">1955</option>
+																		<option value="">1956</option>
+																		<option value="">1957</option>
+																		<option value="">1958</option>
+																		<option value="">1959</option>
+																		<option value="">1960</option>
+																		<option value="">1961</option>
+																		<option value="">1962</option>
+																		<option value="">1963</option>
+																		<option value="">1964</option>
+																		<option value="">1965</option>
+																		<option value="">1966</option>
+																		<option value="">1967</option>
+																		<option value="">1968</option>
+																		<option value="">1969</option>
+																		<option value="">1970</option>
+																		<option value="">1971</option>
+																		<option value="">1972</option>
+																		<option value="">1973</option>
+																		<option value="">1974</option>
+																		<option value="">1975</option>
+																		<option value="">1976</option>
+																		<option value="">1977</option>
+																		<option value="">1978</option>
+																		<option value="">1979</option>
+																		<option value="">1980</option>
+																		<option value="">1981</option>
+																		<option value="">1982</option>
+																		<option value="">1983</option>
+																		<option value="">1984</option>
+																		<option value="">1985</option>
+																		<option value="">1986</option>
+																		<option value="">1987</option>
+																		<option value="">1988</option>
+																		<option value="">1989</option>
+																		<option value="">1990</option>
+																		<option value="">1991</option>
+																		<option value="">1992</option>
+																		<option value="">1993</option>
+																		<option value="">1994</option>
+																		<option value="">1995</option>
+																		<option value="">1996</option>
+																		<option value="">1997</option>
+																		<option value="">1998</option>
+																		<option value="">1999</option>
+																		<option value="">2000</option>
+																		<option value="">2001</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+														<div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Gender:</label>
+														<div class="personal-input">
+															<input type="text" class="form-control" disabled="" value="Male">
+														</div>
+														<div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Email:</label>
+														<div class="personal-input">
+															<input type="email" class="form-control" disabled="" value="salipur.bratislav@gmail.com">
+														</div>
+														<div class="clearfix"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Country:*</label>
+														<div class="personal-input">
+															<select class="form-control">
+																<option value="">Japan</option>
+																<option value="">Mali</option>
+																<option value="">Namibia</option>
+																<option value="">Nigeria</option>
+																<option value="">Poland</option>
+																<option value="">Spain</option>
+																<option value="">Togo</option>
+																<option value="">United kingdom</option>
+																<option value="">United States</option>
+																<option value="">Vietnam</option>
+																<option value="">Yemen</option>
+																<option value="">Zambia</option>
+															</select>
+														</div>
+														<div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>City:*</label>
+														<div class="personal-input">
+															<input type="text" class="form-control" value="Lusaka" placeholder="Enter the city where you live">
+														</div>
+														<div class="clearfix"></div>
+                                                    </div>
+													<div class="form-group">
+                                                        <label>Address:</label>
+														<div class="personal-input">
+															<input type="text" class="form-control"  placeholder="Street/House">
+														</div>
+														<div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Current password:*</label>
+														<div class="personal-input">
+															<input type="text" class="form-control"  placeholder="Enter your password">
+														</div>
+														<div class="clearfix"></div>
+                                                    </div>
+													<div class="personal-options">
+														<p>Notify me about news and offers by:</p>
+														<p>Internal Messages
+															<span>
+																<label><input type="radio" name="1">Yes</label>
+																<label><input type="radio" name="1">No</label>
+															</span>
+														</p>
+														<p>Push Notifications
+															<span>
+																<label><input type="radio" name="2">Yes</label>
+																<label><input type="radio" name="2">No</label>
+															</span>
+														</p>
+														<p>Phone Call
+															<span>
+																<label><input type="radio" name="3">Yes</label>
+																<label><input type="radio" name="3">No</label>
+															</span>
+														</p>
+														<p>Email
+															<span>
+																<label><input type="radio" name="4">Yes</label>
+																<label><input type="radio" name="4">No</label>
+															</span>
+														</p>
+														<p>SMS
+															<span>
+																<label><input type="radio" name="5">Yes</label>
+																<label><input type="radio" name="5">No</label>
+															</span>
+														</p>
+													</div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <input type="submit" class="personal-submit-btn" value="SAVE">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+                                    <div class="changepass-form">
+                                        <h4>Change Password</h4>
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label>Current password:</label>
+                                                        <input type="text" class="form-control" value="Current password">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>New password:</label>
+                                                        <input type="" class="form-control" value="New password">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Confirm new password:</label>
+                                                        <input type="text" class="form-control" placeholder="Confirm new password">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <input type="submit" class="changepass-submit-btn" value="SAVE">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="timeout" role="tabpanel" aria-labelledby="timeout-tab">
+                                    <div class="timeout-block">
+                                        <h4>Time-Out</h4>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <p>Temporary self-exclusion allows you to take a break from the website for a chosen period. You will be able to login to your account upon the expiration of this period.</p>
+                                                    <label><input type="radio" name="1">24 hours</label><br>
+                                                    <label><input type="radio" name="1">One Week</label><br>
+                                                    <label><input type="radio" name="1">One month</label><br>
+                                                    <label><input type="radio" name="1">Two months</label><br>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input type="submit" class="timeout-block-submit-btn" value="SAVE">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="balance-block" role="tabpanel" aria-labelledby="balance-block-tab">
+                        <div class="tab-block">
+                            <div class="profile-sub-tabs">
+                                <ul class="nav nav-tabs" id="balance-tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active show" id="deposit-tab" data-toggle="tab" href="#deposit" role="tab" aria-controls="deposit" aria-selected="true">Deposit</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="withdraw-tab" data-toggle="tab" href="#withdraw" role="tab" aria-controls="withdraw" aria-selected="false">Withdraw</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="false">History</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content" id="balanceContent">
+                                <div class="tab-pane fade active show" id="deposit" role="tabpanel" aria-labelledby="deposit-tab">
+                                    <div class="profile-sub2-tabs">
+                                        <ul class="nav nav-tabs" id="deposit-tabs" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active show" id="makedeposit-tab" data-toggle="tab" href="#makedeposit" role="tab" aria-controls="makedeposit" aria-selected="true">Make deposit</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="depositstatus-tab" data-toggle="tab" href="#depositstatus" role="tab" aria-controls="depositstatus" aria-selected="false">Deposit status</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content" id="depositContent">
+                                        <div class="tab-pane fade active show" id="makedeposit" role="tabpanel" aria-labelledby="makedeposit-tab">
+                                            <div class="payment-block">
+                                                <div class="payment-method">
+                                                    <div class="payment-vertical-item">
+                                                        <ul class="nav nav-tabs" id="payment-method-tab" role="tablist">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active show" id="dp-payment-method-tab" data-toggle="tab" href="#dp-payment-method" role="tab" aria-controls="dp-payment-method" aria-selected="true">Payment Method</a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="dp-cash-tab" data-toggle="tab" href="#dp-cash" role="tab" aria-controls="dp-cash" aria-selected="false"><img src="images/payment-cash.png" alt=""></a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="dp-mtn-tab" data-toggle="tab" href="#dp-mtn" role="tab" aria-controls="dp-mtn" aria-selected="false"><img src="images/payment-mtn-mob.png" alt=""></a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="dp-fnb-bank-tab" data-toggle="tab" href="#dp-fnb-bank" role="tab" aria-controls="dp-fnb-bank" aria-selected="false"><img src="images/payment-fnb.png" alt=""></a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="dp-airtel-tab" data-toggle="tab" href="#dp-airtel" role="tab" aria-controls="dp-airtel" aria-selected="false"><img src="images/payment-airtel.png" alt=""></a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="dp-zamtel-tab" data-toggle="tab" href="#dp-zamtel" role="tab" aria-controls="dp-zamtel" aria-selected="false"><img src="images/payment-zamtel.png" alt=""></a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="dp-touch4pay-tab" data-toggle="tab" href="#dp-touch4pay" role="tab" aria-controls="dp-touch4pay" aria-selected="false"><img src="images/payment-touch4pay.png" alt=""></a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="dp-fnb-wallet-tab" data-toggle="tab" href="#dp-fnb-wallet" role="tab" aria-controls="dp-fnb-wallet" aria-selected="false"><img src="images/payment-fnb-wallet.png" alt=""></a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="dp-mtn-mob-tab" data-toggle="tab" href="#dp-mtn-mob" role="tab" aria-controls="dp-mtn-mob" aria-selected="false"><img src="images/payment-mtn-mob.png" alt=""></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="payment-vertical-content">
+                                                        <div class="tab-content" id="dp-payment-methodContent">
+                                                            <div class="tab-pane fade active show" id="dp-payment-method" role="tabpanel" aria-labelledby="dp-payment-method-tab">
+                                                                <div class="payment-method-table">
+                                                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                                        <tr>
+                                                                            <th>Name</th>
+                                                                            <th>Fee</th>
+                                                                            <th>Process Time</th>
+                                                                            <th>Min</th>
+                                                                            <th>Max</th>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Cash</td>
+                                                                            <td>Free</td>
+                                                                            <td>Instant</td>
+                                                                            <td>1</td>
+                                                                            <td>10000</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>MTN</td>
+                                                                            <td>Free</td>
+                                                                            <td>Instant</td>
+                                                                            <td>1</td>
+                                                                            <td>10000</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>FNB Bank Transfer</td>
+                                                                            <td>Free</td>
+                                                                            <td>Instant</td>
+                                                                            <td>1</td>
+                                                                            <td>10000</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Airtel</td>
+                                                                            <td>Free</td>
+                                                                            <td>Instant</td>
+                                                                            <td>1</td>
+                                                                            <td>10000</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Zamtel</td>
+                                                                            <td>Free</td>
+                                                                            <td>Instant</td>
+                                                                            <td>1</td>
+                                                                            <td>10000</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Touch4Pay</td>
+                                                                            <td>Free</td>
+                                                                            <td>Instant</td>
+                                                                            <td>1</td>
+                                                                            <td>10000</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>FNBeWALLET</td>
+                                                                            <td>Free</td>
+                                                                            <td>Instant</td>
+                                                                            <td>1</td>
+                                                                            <td>10000</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>MTN Mobile Money</td>
+                                                                            <td>Free</td>
+                                                                            <td>Less than 10 minutes</td>
+                                                                            <td>1</td>
+                                                                            <td>10000</td>
+                                                                        </tr>
+                                                                        
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="dp-cash" role="tabpanel" aria-labelledby="dp-cash-tab">
+                                                                <div class="payment-method-detail">
+                                                                    <p>To deposit money you should tell the bookmaker-cashier your Castlebet account number which you were granted after the registration on our website.</p>
+                                                                    <p>The addresses of betting offices where you can deposit cash money.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="dp-mtn" role="tabpanel" aria-labelledby="dp-mtn-tab">
+                                                                <div class="payment-method-detail">
+                                                                    <p>Automatic Instant MTN Mobile Money Deposit option:</p>
+                                                                    <p>
+                                                                        Step 1: Enter the amount you wish to transfer from your MTN Mobile Money wallet to your Castlebet betting wallet.<br>
+                                                                        Step 2: Press the Deposit button.<br>
+                                                                        Step 3: Enter your 5-digit MTN mobile Money on the white popup screen when prompted.<br>
+                                                                        Step 4: Your deposit will reflect on your Castlebet balance within 1 second!
+                                                                    </p>
+																	<form class="deposit-amount-block">
+																		<label>
+																			<p>Deposit Amount</p>
+																			<div class="enter-amount-block">
+																				<input type="text" placeholder="Enter Amount Here">
+																				<span>ZMW</span>
+																			</div>
+																			<div class="deposit-btn">
+																				<a href="">Deposit</a>
+																			</div>	
+																		</label>
+																     </form>
+                                                                </div>
+																
+                                                            </div>
+                                                            <div class="tab-pane fade" id="dp-fnb-bank" role="tabpanel" aria-labelledby="dp-fnb-bank-tab">
+                                                                <div class="payment-method-detail">
+                                                                    <p>
+                                                                        Please visit any FNB branch and request to make a cash deposit to the<br>
+                                                                        following account, or transfer money to the account below from your any<br>
+                                                                        Zambian bank which offers you online banking:
+                                                                    </p>
+                                                                    <p>
+                                                                        Account Name: Castlebet Zambia Ltd<br>
+                                                                        Account Number: 62742522263<br>
+                                                                        Branch Name &amp; Number: MANDA HILL 260014<br>
+                                                                        Swift Code: FIRNZMLX
+                                                                    </p>
+                                                                    <p>
+                                                                        Please keep your deposit slip and send us a photograph of the image&nbsp;<br>
+                                                                        via whatsapp or facebook messenger from your registered Castlebet&nbsp;<br>
+                                                                        Username phone number.
+                                                                    </p>
+                                                                    <p>The funds will be added to your gaming wallet as soon as the money has cleared to the Castlebet Business Bank Account.</p>
+                                                                    <p>Good luck!</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="dp-airtel" role="tabpanel" aria-labelledby="dp-airtel-tab">
+                                                                <div class="payment-method-detail">
+                                                                    <p>OPTION A: Visit any Airtel money kiosk and ask them to send funds direct to phone number 0979 62 5555.</p>
+                                                                    <p>(Don’t forget to give the agent your Castlebet username/registered phone number when the agent asks you for what reference to put on the payment.)</p>
+                                                                    <p>OPTION B:</p>
+                                                                    <p>(Fastest &amp; best if your phone is already registered with Airtel Money):</p>
+                                                                    <p>Step 1: DIAL *778#</p>
+                                                                    <p>Step 2: SELECT OPTION 4, MAKE PAYMENT.</p>
+                                                                    <p>Step 3: SELECT OPTION 5, GOODS AND SERVICES</p>
+                                                                    <p>Step 4: SELECT "ENTER BUSINESS NAME":<br>
+                                                                    TYPE cbet (this is Castlebet's merchant ID.)</p>
+                                                                    <p>Step 5: ENTER AMOUNT (how much Kwacha you want to deposit from mobile money to castlebet)</p>
+                                                                    <p>Step 6: ENTER REFERENCE (this is your account number/phone number registered with Castlebet)</p>
+                                                                    <p>Step 7: ENTER YOUR AIRTEL MOBILE MONEY PIN<br>
+                                                                    You will receive an SMS confirming your deposit to Castlebet.</p>
+                                                                    <p>After a few moments, log into your Castlebet account and check that your balance has updated</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="dp-zamtel" role="tabpanel" aria-labelledby="dp-zamtel-tab">
+                                                                <div class="payment-method-detail">
+                                                                    <p>OPTION 1: Visit any Zamtel kwacha Mobile Money kiosk and ask them to send funds direct to phone number 0955058281.</p>
+                                                                    <p>PLEASE NOTE: Remember to give the agent your Castlebet username/registered phone number when the agent asks you for a reference to put on the payment.</p>
+                                                                    <p>Tha above method can be used by any Castlebet client even if they do NOT have a Zamtel line or are not registered for Zamtel Kwacha.)</p>
+                                                                    <p>OPTION 2:</p>
+                                                                    <p>(Fastest &amp; best if your phone is already registered with Zamtel Kwacha):</p>
+                                                                    <p>Step 1: DIAL *344#</p>
+                                                                    <p>Step 2: SELECT OPTION 1, (SEND MONEY TO)</p>
+                                                                    <p>Step 3: ENTER MOBILE NUMBER, (input CASTLEBET Deposit line 0955058281)</p>
+                                                                    <p>Step 4: ENTER AMOUNT (of Kwacha which you wish to deposit to your Castlebet wallet).</p>
+                                                                    <p>Step 5: ENTER YOUR Zamtel Kwacha PIN</p>
+                                                                    <p>Step 6: FINALLY ACCEPT WITH OPTION 1<br>
+                                                                    You will receive SMS confirming your deposit to Castlebet.</p>
+                                                                    <p>Please note,the funds should reflect into your Castlebet online account within a few moments.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="dp-touch4pay" role="tabpanel" aria-labelledby="dp-touch4pay-tab">
+                                                                <div class="payment-method-detail">
+                                                                    <p>Deposit instructions should be as follows:</p>
+                                                                    <p>How do I deposit money to my Castlebet account via Touch 4 Pay kiosks?</p>
+                                                                    <p>STEP 1: FIND A NEARBY Touch4Pay KIOSK.</p>
+                                                                    <p>(The kiosks are purple in colour and often used by customers to top up Zesco vouchers etc. They are found in busy Ccasinos/shopping malls &amp; supermarkets such as Pick N Pay.</p>
+                                                                    <p>STEP 2: PRESS THE CASTLEBET BUTTON ON SCREEN.</p>
+                                                                    <p>STEP 3: ENTER YOUR PHONE NUMBER ON THE KIOSK SCREEN.&nbsp;</p>
+                                                                    <p>(The phone number you enter should be the same number you registered as your Castlebet username when you joined the service.)</p>
+                                                                    <p>STEP 4: INSERT BANK NOTES INTO THE MACHINE.</p>
+                                                                    <p>STEP 5: LOGON TO YOUR CASTLEBET ACCOUNT ON YOUR PHONE AND CHECK YOUR DEPOSIT HAS REFLECTED.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="dp-fnb-wallet" role="tabpanel" aria-labelledby="dp-fnb-wallet-tab">
+                                                                <div class="payment-method-detail">
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="dp-mtn-mob" role="tabpanel" aria-labelledby="dp-mtn-mob-tab">
+                                                                <div class="payment-method-detail">
+                                                                    <p>OPTION A: Visit any yellow MTN Mobile Money kiosk and ask them to send funds direct to phone number 0960709514 (Don’t forget to give the agent your Castlebet username/registered phone number when the agent asks you for what reference to put on the payment.)</p>
+
+                                                                    <p>Option B: if your MTN line is already registered/active with MTN Mobile Money):</p>
+
+                                                                    <p>
+                                                                        Step 1: DIAL *303#<br>
+                                                                        Step 2: SELECT OPTION 2, PAY BILL<br>
+                                                                        Step 3: SELECT OPTIONS 3, GOODS AND SERVICES<br>
+                                                                        Step 4: ENTER MERCHANT ID<br>
+                                                                        Step 5: TYPE cbet<br>
+                                                                        Step 6: ENTER AMOUNT<br>
+                                                                        Step 7: ENTER REFERENCE (this is your account number/phone number registered with Castlebet)<br>
+                                                                        Step 8: ENTER PIN TO CONFIRM<br>
+                                                                        (Finally, You will receive SMS confirming your deposit to Castlebet.)"
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="dp-depositstatus" role="tabpanel" aria-labelledby="dp-depositstatus-tab">
+                                            <div class="depositstatus">
+                                                <p>Last deposit requests</p>
+                                                <div class="depositstatus-list">
+                                                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <th width="10%">Date and ID</th>
+                                                            <th width="10%">System</th>
+                                                            <th width="10%">Amount</th>
+                                                            <th>Status</th>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="tab-pane fade" id="withdraw" role="tabpanel" aria-labelledby="withdraw-tab">
+                                    <div class="profile-sub2-tabs">
+                                        <ul class="nav nav-tabs" id="wd-withdraw-tabs" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active show" id="wd-makewithdraw-tab" data-toggle="tab" href="#wd-makewithdraw" role="tab" aria-controls="wd-makewithdraw" aria-selected="true">Make withdraw</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="wd-withdrawstatus-tab" data-toggle="tab" href="#wd-withdrawstatus" role="tab" aria-controls="wd-withdrawstatus" aria-selected="false">Withdraw status</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content" id="wd-withdrawContent">
+                                        <div class="tab-pane fade active show" id="wd-makewithdraw" role="tabpanel" aria-labelledby="wd-makewithdraw-tab">
+                                            <div class="payment-block">
+                                                <div class="payment-method">
+                                                    <div class="payment-vertical-item">
+                                                        <ul class="nav nav-tabs" id="wd-payment-method-tab" role="tablist">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active show" id="wd-payment-method-tab" data-toggle="tab" href="#wd-payment-method" role="tab" aria-controls="wd-payment-method" aria-selected="true">Payment Method</a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="wd-cash-tab" data-toggle="tab" href="#wd-cash" role="tab" aria-controls="wd-cash" aria-selected="false"><img src="images/payment-cash.png" alt=""></a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="wd-mtn-tab" data-toggle="tab" href="#wd-mtn" role="tab" aria-controls="wd-mtn" aria-selected="false"><img src="images/payment-mtn-mob.png" alt=""></a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="wd-fnb-bank-tab" data-toggle="tab" href="#wd-fnb-bank" role="tab" aria-controls="wd-fnb-bank" aria-selected="false"><img src="images/payment-airtel.png" alt=""></a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="wd-airtel-tab" data-toggle="tab" href="#wd-airtel" role="tab" aria-controls="wd-airtel" aria-selected="false"><img src="images/payment-mtn.png" alt=""></a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="wd-zamtel-tab" data-toggle="tab" href="#wd-zamtel" role="tab" aria-controls="wd-zamtel" aria-selected="false"><img src="images/payment-bank-transfer.png" alt=""></a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="wd-touch4pay-tab" data-toggle="tab" href="#wd-touch4pay" role="tab" aria-controls="wd-touch4pay" aria-selected="false"><img src="images/payment-fnb.png" alt=""></a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="wd-fnb-wallet-tab" data-toggle="tab" href="#wd-fnb-wallet" role="tab" aria-controls="wd-fnb-wallet" aria-selected="false"><img src="images/payment-zoona.png" alt=""></a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="wd-mtn-mob-tab" data-toggle="tab" href="#wd-mtn-mob" role="tab" aria-controls="wd-mtn-mob" aria-selected="false"><img src="images/payment-zamtel.png" alt=""></a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="wd-nsano-tab" data-toggle="tab" href="#wd-nsano" role="tab" aria-controls="wd-nsano" aria-selected="false"><img src="images/payment-fnb-wallet.png" alt=""></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="payment-vertical-content">
+                                                        <div class="tab-content" id="wd-payment-methodContent">
+                                                            <div class="tab-pane fade active show" id="wd-payment-method" role="tabpanel" aria-labelledby="wd-payment-method-tab">
+                                                                <div class="payment-method-table">
+                                                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                                        <tr>
+                                                                            <th>Name</th>
+                                                                            <th>Fee</th>
+                                                                            <th>Process Time</th>
+                                                                            <th>Min</th>
+                                                                            <th>Max</th>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Cash</td>
+                                                                            <td>Free</td>
+                                                                            <td>Instant</td>
+                                                                            <td>1</td>
+                                                                            <td>10000</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>MTN</td>
+                                                                            <td>Free</td>
+                                                                            <td>Instant</td>
+                                                                            <td>1</td>
+                                                                            <td>10000</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>FNB Bank Transfer</td>
+                                                                            <td>Free</td>
+                                                                            <td>Instant</td>
+                                                                            <td>1</td>
+                                                                            <td>10000</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Airtel</td>
+                                                                            <td>Free</td>
+                                                                            <td>Instant</td>
+                                                                            <td>1</td>
+                                                                            <td>10000</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Zamtel</td>
+                                                                            <td>Free</td>
+                                                                            <td>Instant</td>
+                                                                            <td>1</td>
+                                                                            <td>10000</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Touch4Pay</td>
+                                                                            <td>Free</td>
+                                                                            <td>Instant</td>
+                                                                            <td>1</td>
+                                                                            <td>10000</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>FNBeWALLET</td>
+                                                                            <td>Free</td>
+                                                                            <td>Instant</td>
+                                                                            <td>1</td>
+                                                                            <td>10000</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>MTN Mobile Money</td>
+                                                                            <td>Free</td>
+                                                                            <td>Less than 10 minutes</td>
+                                                                            <td>1</td>
+                                                                            <td>10000</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Nsano</td>
+                                                                            <td>Free</td>
+                                                                            <td>Instant</td>
+                                                                            <td>1</td>
+                                                                            <td>10000</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="wd-cash" role="tabpanel" aria-labelledby="wd-cash-tab">
+                                                                <div class="payment-method-detail">
+                                                                    <p>To deposit money you should tell the bookmaker-cashier your Castlebet account number which you were granted after the registration on our website.</p>
+                                                                   <div class="wd-zm-location">
+																	<p>Zambia</p>
+																	<label>
+																		<input type="radio">
+																		<span>BOLABET Kafue Rd, Downtown Shopping Mall, 1st Floor, Shop #F01 10101 Lusaka, Zambia </span>
+																	</label>
+																</div>
+																<form class="deposit-amount-block">
+																		<label>
+																			<p>Withdraw Amount</p>
+																			<div class="enter-amount-block">
+																				<input type="text" placeholder="Enter Amount Here">
+																				<span>ZMW</span>
+																			</div>
+																			<div class="deposit-btn">
+																				<a href="">Withdraw</a>
+																			</div>	
+																		</label>
+																 </form>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="wd-mtn" role="tabpanel" aria-labelledby="wd-mtn-tab">
+                                                                <div class="payment-method-detail">
+                                                                    <form class="deposit-amount-block">
+																		<label>
+																			<p>Withdraw Amount</p>
+																			<div class="enter-amount-block">
+																				<input type="text" placeholder="Enter Amount Here">
+																				<span>ZMW</span>
+																			</div>
+																			<div class="deposit-btn">
+																				<a href="">Withdraw</a>
+																			</div>	
+																		</label>
+																 </form>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="wd-fnb-bank" role="tabpanel" aria-labelledby="wd-fnb-bank-tab">
+                                                                <div class="payment-method-detail">
+                                                                    <form class="deposit-amount-block">
+																		<label>
+																		    <p>Name</p>
+																			<div class="enter-wd-block">
+																				<input type="text" >
+																			</div>	
+																			<p>Withdraw Amount</p>
+																			<div class="enter-amount-block">
+																				<input type="text" placeholder="Enter Amount Here">
+																				<span>ZMW</span>
+																			</div>
+																			<div class="deposit-btn">
+																				<a href="">Withdraw</a>
+																			</div>	
+																		</label>
+																 </form>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="wd-airtel" role="tabpanel" aria-labelledby="wd-airtel-tab">
+                                                                <div class="payment-method-detail">
+                                                                    <form class="deposit-amount-block">
+																		<label>
+																		    <p>Name</p>
+																			<div class="enter-wd-block">
+																				<input type="text" >
+																			</div>	
+																			<p>Withdraw Amount</p>
+																			<div class="enter-amount-block">
+																				<input type="text" placeholder="Enter Amount Here">
+																				<span>ZMW</span>
+																			</div>
+																			<div class="deposit-btn">
+																				<a href="">Withdraw</a>
+																			</div>	
+																		</label>
+																 </form>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="wd-zamtel" role="tabpanel" aria-labelledby="wd-zamtel-tab">
+                                                                <div class="payment-method-detail">
+                                                                   <form class="deposit-amount-block">
+																		<label>
+																		    <p>Name</p>
+																			<div class="enter-wd-block">
+																				<input type="text" >
+																			</div>	
+																			<p>Withdraw Amount</p>
+																			<div class="enter-amount-block">
+																				<input type="text" placeholder="Enter Amount Here">
+																				<span>ZMW</span>
+																			</div>
+																			<div class="deposit-btn">
+																				<a href="">Withdraw</a>
+																			</div>	
+																		</label>
+																 </form>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="wd-touch4pay" role="tabpanel" aria-labelledby="wd-touch4pay-tab">
+																<div class="payment-method-detail">
+																	<form class="deposit-amount-block">
+																			<label>
+																				<p>Name</p>
+																				<div class="enter-wd-block">
+																					<input type="text" >
+																				</div>	
+																				<p>Withdraw Amount</p>
+																				<div class="enter-amount-block">
+																					<input type="text" placeholder="Enter Amount Here">
+																					<span>ZMW</span>
+																				</div>
+																				<div class="deposit-btn">
+																					<a href="">Withdraw</a>
+																				</div>	
+																			</label>
+																	 </form>
+																 </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="wd-fnb-wallet" role="tabpanel" aria-labelledby="wd-fnb-wallet-tab">
+                                                                <div class="payment-method-detail">
+																	<form class="deposit-amount-block">
+																		<label>
+																			<p>Withdraw Amount</p>
+																			<div class="enter-amount-block">
+																				<input type="text" placeholder="Enter Amount Here">
+																				<span>ZMW</span>
+																			</div>
+																			<div class="deposit-btn">
+																				<a href="">Withdraw</a>
+																			</div>	
+																		</label>
+																 </form>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="wd-mtn-mob" role="tabpanel" aria-labelledby="wd-mtn-mob-tab">
+                                                                <div class="payment-method-detail">
+                                                                    <form class="deposit-amount-block">
+																		<label>
+																			<p>Withdraw Amount</p>
+																			<div class="enter-amount-block">
+																				<input type="text" placeholder="Enter Amount Here">
+																				<span>ZMW</span>
+																			</div>
+																			<div class="deposit-btn">
+																				<a href="">Withdraw</a>
+																			</div>	
+																		</label>
+																 </form>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="wd-nsano" role="tabpanel" aria-labelledby="wd-nsano-tab">
+                                                                <div class="payment-method-detail">
+                                                                 <form class="deposit-amount-block">
+																		<label>
+																			<p>Withdraw Amount</p>
+																			<div class="enter-amount-block">
+																				<input type="text" placeholder="Enter Amount Here">
+																				<span>ZMW</span>
+																			</div>
+																			<div class="deposit-btn">
+																				<a href="">Withdraw</a>
+																			</div>	
+																		</label>
+																 </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="wd-withdrawstatus" role="tabpanel" aria-labelledby="wd-withdrawstatus-tab">
+                                            <div class="withdrawstatus">
+                                                <p>Last withdraw requests</p>
+                                                <div class="withdrawstatus-list">
+                                                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <th width="10%">Date and ID</th>
+                                                            <th width="10%">System</th>
+                                                            <th width="10%">Amount</th>
+                                                            <th>Status</th>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">
+                                    
+									<div class="history-block">
+                                        <div class="all-history-filter-container">
+											<div class="filter-columns-container">
+												<ul>
+													<li>
+														<p>Transaction Type</p>
+														<select class="control-form">
+														<option value="" selected="selected">All</option>
+														<option value="" >Bets</option>
+														<option value="" >Winning Bets</option>
+														<option value="" >Deposit</option>
+														<option value="" >Cash Desk Deposit</option>
+														<option value="" >Canceled by user</option>
+														<option value="" >Deposit by payment system</option>
+														<option value="" >Withdrawal request</option>
+														<option value="" >Withdrawal denied</option>
+														<option value="" >Pool Bet</option>
+														<option value="" >Live Dealer Tip</option>
+														<option value="" >Client Bonus payment</option>
+														<option value="" >Live Dealer Tip</option>
+														<option value="" >Correction up</option>
+														<option value="" >Correction down</option>
+														</select>
+													</li>
+													<li>
+														<p>Range</p>
+														<div class="date-pickr-block">
+															<input type="text" placeholder="24/5/2019">
+															<input type="text" placeholder="30/5/2019">
+														</div>	
+													</li>
+													
+												</ul>
+											</div>
+											<div class="mybets-filter-show-btn">
+												<a href="#">SHOW</a>
+											</div>
+											
+                                        </div>
+									</div>
+									
+									<div class="history-block1">
+										<div class="history-block-content1">
+											<div class="history-block-list-left">
+												<ul>
+													<li>Date and ID</li>
+													<li>Type</li>
+												</ul>
+											</div>
+											<div class="history-block-list-right">
+												<ul>
+													<li>Amount</li>
+													<li>Final Balance</li>
+												</ul>
+											</div>
+										</div>	
+										<div class="history-block-finaldate">
+											<a href="#">There are no data for the selected time period.</a>
+										</div>
+									</div>
+                                    
+									
+									
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="mybet-block" role="tabpanel" aria-labelledby="mybet-block-tab">
+                        <div class="tab-block">
+							<div class="tab-block-mybet">
+								<ul class="nav nav-tabs" id="mybet-tabs" role="tablist">
+									<li class="nav-item">
+										<a class="nav-link active show" id="allbets-tab" data-toggle="tab" href="#allbets" role="tab" aria-controls="allbets" aria-selected="true">All Bets</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" id="openbet-tab" data-toggle="tab" href="#openbet" role="tab" aria-controls="openbet" aria-selected="false">Open</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" id="chashedout-tab" data-toggle="tab" href="#chashedout" role="tab" aria-controls="chashedout" aria-selected="false">Cashed Out</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" id="wonbet-tab" data-toggle="tab" href="#wonbet" role="tab" aria-controls="wonbet" aria-selected="false">Won</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" id="lostbet-tab" data-toggle="tab" href="#lostbet" role="tab" aria-controls="lostbet" aria-selected="false">Lost</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" id="returnedbet-tab" data-toggle="tab" href="#returnedbet" role="tab" aria-controls="returnedbet" aria-selected="false">Returned</a>
+									</li>
+								</ul>
+							</div>
+                            <div class="tab-content" id="mybetContent">
+                                <div class="tab-pane fade active show" id="allbets" role="tabpanel" aria-labelledby="allbets-tab">
+                                    <div class="mybet-filter-block">
+										<ul>
+											<li>
+												<label>Bet ID:</label>
+												<input type="text" placeholder="#">
+											</li>
+											<li>
+												<label>Bet Type</label>
+												<select>
+												<option value="" selected="selected">All</option>
+												<option value="" >Single</option>
+												<option value="" >Multiple</option>
+												<option value="" >System</option>
+												<option value="" >Chain</option>
+												</select>
+											</li>
+											<li>
+												<label>Period</label>
+												<select>
+												<option value="" >1 hour</option>
+												<option value="" >2 hours</option>
+												<option value="" >3 hours</option>
+												<option value="" >6 hours</option>
+												<option value="" >12 hours</option>
+												<option value="" selected="selected" >24 hours</option>
+												<option value="" >48 hours</option>
+												<option value="" >72 hours</option>
+												
+												</select>
+											</li>
+											<li>
+												<label>Range</label>
+												<div class="date-range">
+													<input type="text" placeholder="From">
+													<input type="text" placeholder="To">
+												</div>	
+											</li>
+										</ul>
+										<div class="mybet-filter-btn">
+											<label></label>
+											<button>Show</button>
+										</div>
+										<div class="clearfix"></div>
+                                    </div>
+									<div class="mybet-content-block">
+										<div class="history-block-content1">
+											<div class="history-block-list-left">
+												<ul>
+													<li>Date and ID</li>
+													<li>Bet Type</li>
+												</ul>
+											</div>
+											<div class="history-block-list-right">
+												<ul>
+													<li>Stake...</li>
+													<li>Odd Type</li>
+													<li>Odds</li>
+													<li>Outcome</li>
+													<li>Status</li>
+													<li><i class="fas fa-angle-double-down"></i></li>
+												</ul>
+											</div>
+										</div>	
+										<div class="history-block-finaldate">
+											<a href="#">There are no data for the selected time period.</a>
+										</div>
+									</div>
+								</div>	
+                                <div class="tab-pane fade" id="openbet" role="tabpanel" aria-labelledby="openbet-tab">
+                                   <div class="mybet-filter-block">
+										<ul>
+											<li>
+												<label>Bet ID:</label>
+												<input type="text" placeholder="#">
+											</li>
+											<li>
+												<label>Bet Type</label>
+												<select>
+												<option value="" selected="selected">All</option>
+												<option value="" >Single</option>
+												<option value="" >Multiple</option>
+												<option value="" >System</option>
+												<option value="" >Chain</option>
+												</select>
+											</li>
+											<li>
+												<label>Period</label>
+												<select>
+												<option value="" >1 hour</option>
+												<option value="" >2 hours</option>
+												<option value="" >3 hours</option>
+												<option value="" >6 hours</option>
+												<option value="" >12 hours</option>
+												<option value="" selected="selected" >24 hours</option>
+												<option value="" >48 hours</option>
+												<option value="" >72 hours</option>
+												
+												</select>
+											</li>
+											<li>
+												<label>Range</label>
+												<div class="date-range">
+													<input type="text" placeholder="From">
+													<input type="text" placeholder="To">
+												</div>	
+											</li>
+										</ul>
+										<div class="mybet-filter-btn">
+											<label></label>
+											<button>Show</button>
+										</div>
+										<div class="clearfix"></div>
+                                    </div>
+									<div class="mybet-content-block">
+										<div class="history-block-content1">
+											<div class="history-block-list-left">
+												<ul>
+													<li>Date and ID</li>
+													<li>Bet Type</li>
+												</ul>
+											</div>
+											<div class="history-block-list-right">
+												<ul>
+													<li>Stake...</li>
+													<li>Odd Type</li>
+													<li>Odds</li>
+													<li>Outcome</li>
+													<li>Status</li>
+													<li><i class="fas fa-angle-double-down"></i></li>
+												</ul>
+											</div>
+										</div>	
+										<div class="history-block-finaldate">
+											<a href="#">There are no data for the selected time period.</a>
+										</div>
+									</div>
+								</div>	
+                                <div class="tab-pane fade" id="chashedout" role="tabpanel" aria-labelledby="chashedout-tab">
+                                    <div class="mybet-filter-block">
+										<ul>
+											<li>
+												<label>Bet ID:</label>
+												<input type="text" placeholder="#">
+											</li>
+											<li>
+												<label>Bet Type</label>
+												<select>
+												<option value="" selected="selected">All</option>
+												<option value="" >Single</option>
+												<option value="" >Multiple</option>
+												<option value="" >System</option>
+												<option value="" >Chain</option>
+												</select>
+											</li>
+											<li>
+												<label>Period</label>
+												<select>
+												<option value="" >1 hour</option>
+												<option value="" >2 hours</option>
+												<option value="" >3 hours</option>
+												<option value="" >6 hours</option>
+												<option value="" >12 hours</option>
+												<option value="" selected="selected" >24 hours</option>
+												<option value="" >48 hours</option>
+												<option value="" >72 hours</option>
+												
+												</select>
+											</li>
+											<li>
+												<label>Range</label>
+												<div class="date-range">
+													<input type="text" placeholder="From">
+													<input type="text" placeholder="To">
+												</div>	
+											</li>
+										</ul>
+										<div class="mybet-filter-btn">
+											<label></label>
+											<button>Show</button>
+										</div>
+										<div class="clearfix"></div>
+                                    </div>
+									<div class="mybet-content-block">
+										<div class="history-block-content1">
+											<div class="history-block-list-left">
+												<ul>
+													<li>Date and ID</li>
+													<li>Bet Type</li>
+												</ul>
+											</div>
+											<div class="history-block-list-right">
+												<ul>
+													<li>Stake...</li>
+													<li>Odd Type</li>
+													<li>Odds</li>
+													<li>Outcome</li>
+													<li>Status</li>
+													<li><i class="fas fa-angle-double-down"></i></li>
+												</ul>
+											</div>
+										</div>	
+										<div class="history-block-finaldate">
+											<a href="#">There are no data for the selected time period.</a>
+										</div>
+									</div>
+								</div>	
+                                <div class="tab-pane fade" id="wonbet" role="tabpanel" aria-labelledby="wonbet-tab">
+                                    <div class="mybet-filter-block">
+										<ul>
+											<li>
+												<label>Bet ID:</label>
+												<input type="text" placeholder="#">
+											</li>
+											<li>
+												<label>Bet Type</label>
+												<select>
+												<option value="" selected="selected">All</option>
+												<option value="" >Single</option>
+												<option value="" >Multiple</option>
+												<option value="" >System</option>
+												<option value="" >Chain</option>
+												</select>
+											</li>
+											<li>
+												<label>Period</label>
+												<select>
+												<option value="" >1 hour</option>
+												<option value="" >2 hours</option>
+												<option value="" >3 hours</option>
+												<option value="" >6 hours</option>
+												<option value="" >12 hours</option>
+												<option value="" selected="selected" >24 hours</option>
+												<option value="" >48 hours</option>
+												<option value="" >72 hours</option>
+												
+												</select>
+											</li>
+											<li>
+												<label>Range</label>
+												<div class="date-range">
+													<input type="text" placeholder="From">
+													<input type="text" placeholder="To">
+												</div>	
+											</li>
+										</ul>
+										<div class="mybet-filter-btn">
+											<label></label>
+											<button>Show</button>
+										</div>
+										<div class="clearfix"></div>
+                                    </div>
+									<div class="mybet-content-block">
+										<div class="history-block-content1">
+											<div class="history-block-list-left">
+												<ul>
+													<li>Date and ID</li>
+													<li>Bet Type</li>
+												</ul>
+											</div>
+											<div class="history-block-list-right">
+												<ul>
+													<li>Stake...</li>
+													<li>Odd Type</li>
+													<li>Odds</li>
+													<li>Outcome</li>
+													<li>Status</li>
+													<li><i class="fas fa-angle-double-down"></i></li>
+												</ul>
+											</div>
+										</div>	
+										<div class="history-block-finaldate">
+											<a href="#">There are no data for the selected time period.</a>
+										</div>
+									</div>
+								</div>	
+                                <div class="tab-pane fade" id="lostbet" role="tabpanel" aria-labelledby="lostbet-tab">
+                                    <div class="mybet-filter-block">
+										<ul>
+											<li>
+												<label>Bet ID:</label>
+												<input type="text" placeholder="#">
+											</li>
+											<li>
+												<label>Bet Type</label>
+												<select>
+												<option value="" selected="selected">All</option>
+												<option value="" >Single</option>
+												<option value="" >Multiple</option>
+												<option value="" >System</option>
+												<option value="" >Chain</option>
+												</select>
+											</li>
+											<li>
+												<label>Period</label>
+												<select>
+												<option value="" >1 hour</option>
+												<option value="" >2 hours</option>
+												<option value="" >3 hours</option>
+												<option value="" >6 hours</option>
+												<option value="" >12 hours</option>
+												<option value="" selected="selected" >24 hours</option>
+												<option value="" >48 hours</option>
+												<option value="" >72 hours</option>
+												
+												</select>
+											</li>
+											<li>
+												<label>Range</label>
+												<div class="date-range">
+													<input type="text" placeholder="From">
+													<input type="text" placeholder="To">
+												</div>	
+											</li>
+										</ul>
+										<div class="mybet-filter-btn">
+											<label></label>
+											<button>Show</button>
+										</div>
+										<div class="clearfix"></div>
+                                    </div>
+									<div class="mybet-content-block">
+										<div class="history-block-content1">
+											<div class="history-block-list-left">
+												<ul>
+													<li>Date and ID</li>
+													<li>Bet Type</li>
+												</ul>
+											</div>
+											<div class="history-block-list-right">
+												<ul>
+													<li>Stake...</li>
+													<li>Odd Type</li>
+													<li>Odds</li>
+													<li>Outcome</li>
+													<li>Status</li>
+													<li><i class="fas fa-angle-double-down"></i></li>
+												</ul>
+											</div>
+										</div>	
+										<div class="history-block-finaldate">
+											<a href="#">There are no data for the selected time period.</a>
+										</div>
+									</div>
+								</div>
+                                <div class="tab-pane fade" id="returnedbet" role="tabpanel" aria-labelledby="returnedbet-tab">
+                                    <div class="mybet-filter-block">
+										<ul>
+											<li>
+												<label>Bet ID:</label>
+												<input type="text" placeholder="#">
+											</li>
+											<li>
+												<label>Bet Type</label>
+												<select>
+												<option value="" selected="selected">All</option>
+												<option value="" >Single</option>
+												<option value="" >Multiple</option>
+												<option value="" >System</option>
+												<option value="" >Chain</option>
+												</select>
+											</li>
+											<li>
+												<label>Period</label>
+												<select>
+												<option value="" >1 hour</option>
+												<option value="" >2 hours</option>
+												<option value="" >3 hours</option>
+												<option value="" >6 hours</option>
+												<option value="" >12 hours</option>
+												<option value="" selected="selected" >24 hours</option>
+												<option value="" >48 hours</option>
+												<option value="" >72 hours</option>
+												
+												</select>
+											</li>
+											<li>
+												<label>Range</label>
+												<div class="date-range">
+													<input type="text" placeholder="From">
+													<input type="text" placeholder="To">
+												</div>	
+											</li>
+										</ul>
+										<div class="mybet-filter-btn">
+											<label></label>
+											<button>Show</button>
+										</div>
+										<div class="clearfix"></div>
+                                    </div>
+									<div class="mybet-content-block">
+										<div class="history-block-content1">
+											<div class="history-block-list-left">
+												<ul>
+													<li>Date and ID</li>
+													<li>Bet Type</li>
+												</ul>
+											</div>
+											<div class="history-block-list-right">
+												<ul>
+													<li>Stake...</li>
+													<li>Odd Type</li>
+													<li>Odds</li>
+													<li>Outcome</li>
+													<li>Status</li>
+													<li><i class="fas fa-angle-double-down"></i></li>
+												</ul>
+											</div>
+										</div>	
+										<div class="history-block-finaldate">
+											<a href="#">There are no data for the selected time period.</a>
+										</div>
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="bonuse-block" role="tabpanel" aria-labelledby="bonuse-block-tab">
+						     
+                        <div class="tab-block">
+							<div class="bonus-left-panel-block">
+								<div class="bonus-left-panel">
+									<a href="#">0.00ZMW</a>
+									<p>Total Bonus</p>
+								</div>
+								<div class="bonus-right-panel">
+									<a href="#">68.30ZMW</a>
+									<p>Withdrawal funds</p>
+								</div>
+							</div>
+							<div class="bonus-right-panel-block">
+								<p>Total Balance</p>
+								<a href="#">68.30ZMW</a>
+							</div>
+							<div class="clearfix"></div>
+							<div class="tab-block-bonus">
+								<ul class="nav nav-tabs" id="bonus-tabs" role="tablist">
+									<li class="nav-item">
+										<a class="nav-link active show" id="sportbook-tab" data-toggle="tab" href="#sportbook" role="tab" aria-controls="sportbook" aria-selected="true">Sport Book</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" id="casinobonus-tab" data-toggle="tab" href="#casinobonus" role="tab" aria-controls="casinobonus" aria-selected="false">Slots</a>
+									</li>
+								</ul>
+							</div>
+                            <div class="tab-content" id="bonusContent">
+								<div class="history-block1">
+									<div class="tab-pane fade active show" id="sportbook" role="tabpanel" aria-labelledby="sportbook-tab">
+										<div class="bonus-block-content">
+											<a href="#">There are no bonuses for selected type.</a>
+										</div>
+									</div>
+									<div class="tab-pane fade" id="casinobonus" role="tabpanel" aria-labelledby="casinobonus-tab">
+										<div class="bonus-block-content">
+											<a href="#">There are no bonuses for selected type.</a>
+										</div>
+									</div>
+								</div>	
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-main">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Legal</h6>
+                    </div>
+                    <ul>
+                        <li><a href="termsandconditions.html">Terms & Condition</a></li>
+                        <li><a href="rules.html">Rules</a></li>
+                        <li><a href="restricted-territories.html">Restricted Territories</a></li>
+                        <li><a href="responsible-gambling.html">Responsible Gambling</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Bolabet1x2</h6>
+                    </div>
+                    <ul>
+                        <li><a href="betshop-location.html">Betshop Locations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="promotions.html">Promotions</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Help</h6>
+                    </div>
+                    <ul>
+                        <li><a href="deposite.html">Deposits</a></li>
+                        <li><a href="withdrawal.html">Withdrawals</a></li>
+                        <li><a href="playtype.html">Play Types</a></li>
+                        <li><a href="#">Sport Book</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Social Networks</h6>
+                    </div>
+                    <div class="footer-social">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="footer-copy">
+            <p>&#169; 2018 All Right Reserved. Bolabet1x2.com</p>
+        </div>
+        <div class="clearfix"></div>
+    </footer>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<!--<script src="js/jquery-3.3.1.slim.min.js"></script>-->
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    function acceptoodone(id)
+    {
+     var getdata=$('#'+id).html();
+     $('#odd-option-selected').html(getdata);
+     $('#bet-confirm').removeClass('show');
+     $('.bet-confirm-btn').addClass('collapsed');
+    }
+	function oddunit(id)
+    {
+     var getdata=$('#'+id).html();
+     $('#oddunit-selected').html(getdata);
+    }
+	function langselect(id)
+    {
+     var getdata=$('#'+id).html();
+     $('#lang-selected').html(getdata);
+    }
+</script>
+</body>
+</html>

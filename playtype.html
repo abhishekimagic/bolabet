@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="images/fav.png">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/feather.min.css">
+    <link rel="stylesheet" href="css/icofont.min.css">
+	<link rel="stylesheet" href="css/line-awesome.min.css">
+	<link rel="stylesheet" href="css/glyphicon.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+	<title>Bolabet 1X2</title>
+</head>
+<body>
+	<div class="header">
+	<div class="header-top">
+		<ul class="headtop-links float-left">
+			<li><a href="help.html">Help</a></li>
+			<li><a href="#">Live Support</a></li>
+			<li><a href="contact.html">Contact Us</a></li>
+		</ul>
+		<ul class="headtop-links float-right">
+			<li><a href="howtoplay.html">How to play</a></li>
+			<li><a href="payment.html">Payments</a></li>
+			<li><a href="#">My Bets</a></li>
+			<li><a href="playtype.html">Play types</a></li>
+			<li><a href="promotions.html">Promotions</a></li>
+			<!--li><a href="mobileapp.html">Mobile Application</a></li-->
+			<li><a href="coupons.html">Coupons</a></li>
+			
+			<li><a href="help.html">Help</a></li>
+			<li>
+				<div class="headtop-drop">
+					<div class="headtop-drop-arrow">
+						<i class="la la-angle-right"></i>
+					</div>
+					Odds <span class="headtop-drop-value" id="oddunit-selected">Decimal</span>
+					<div class="headtop-child">
+						<div class="headtop-child-item">
+							<label onclick="oddunit('unitdec')">
+								<input type="radio" name="oddunit" checked="checked">
+								<span id="unitdec">Decimal</span>
+							</label>
+						</div>
+						<div class="headtop-child-item">
+							<label onclick="oddunit('unitfrac')">
+								<input type="radio" name="oddunit">
+								<span id="unitfrac">Fractional</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="headtop-drop">
+					<div class="headtop-drop-arrow">
+						<i class="la la-angle-right"></i>
+					</div>
+					Language <span class="headtop-drop-value" id="lang-selected">English</span>
+					<div class="headtop-child">
+						<div class="headtop-child-item">
+							<label onclick="langselect('lang-eng')">
+								<input type="radio" name="lang-name" checked="checked">
+								<div class="float-left flag-icon ec"></div>
+								<span id="lang-eng">English</span>
+							</label>
+						</div>
+						<div class="headtop-child-item">
+							<label onclick="langselect('lang-ger')">
+								<input type="radio" name="lang-name">
+								<div class="float-left flag-icon ga"></div>
+								<span id="lang-ger">German</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li><a class="head-time" href="#">16:14 GMT+2</a></li>
+		</ul>
+	</div>
+	<div class="header-main">
+		<div class="logo-wrapper">
+		   <a href="index.html"> <img src="images/logo.png" alt=""></a>
+		</div>
+		<div class="header-category">
+				<button onclick="menulist()"><i class="ft-menu"></i></button>
+				<ul id="head-menu">
+					<li>
+						<a class="category-sport active" href="index.html">Sports Betting</a>
+					</li>
+					<li>
+						<a class="category-livebet"href="livebet.html">Live Betting</a>
+					</li>
+					<li>
+						<a class="category-virtual" href="#">Virtuals</a>
+					</li>
+				</ul>
+				<script>
+					function menulist() {
+						if(document.getElementById('head-menu').style.display == "block"){ 
+							document.getElementById('head-menu').style.display = "none";
+						}
+						else if(document.getElementById('head-menu').style.display == "none"){
+							document.getElementById('head-menu').style.display = "block";
+						}
+						else{
+							document.getElementById('head-menu').style.display = "block";
+						}
+					}
+				</script>
+			</div>
+		<div class="header-login">
+			<ul>
+				<li><a href="registration.html" class="header-reg-btn">Register</a></li>
+				<li><input type="text" placeholder="Email or Phone No."></li>
+				<li><input type="text" placeholder="Password"><br><a href="#" onclick="forgotpassFunction()" class="head-forget-pass">Forgot Password ?</a></li>
+				<li><a href="login.html" class="header-login-btn">Login</a></li>
+			</ul>
+			
+		</div>
+		<div class="forgotpass-popup" id="forgotpass-block" style="display:none;">
+			<div class="forgotpass-content">
+				<div class="forgotpassclose" onclick="forgotpassclose()"><i class="ft-x"></i></div>
+				<h4>Forgot Password?</h4>
+				<div class="form-group">
+					<label>Enter Email ID:</label>
+					<div class="form-input">
+						<input class="form-control" type="email" placeholder="abc@xyz.com">
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="mb-3">Please enter an E-mail address you registered your account with and we will send you a link with link to reset your password</div>
+				<div class="forgotpass-submit">
+					<button onclick="forgotpassclose()">Cancel</button>
+					<input type="submit" value="Reset Password">
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<script>
+			function forgotpassFunction() {
+				if(document.getElementById('forgotpass-block').style.display == "none"){ 
+					document.getElementById('forgotpass-block').style.display = "block";
+				}
+				else{ 
+					document.getElementById('forgotpass-block').style.display = "none";
+				}
+			}
+			function forgotpassclose() {
+				if(document.getElementById('forgotpass-block').style.display == "block"){ 
+					document.getElementById('forgotpass-block').style.display = "none";
+				}
+			}
+		</script>
+		<div class="clearfix"></div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+	<div class="content-body">	
+		<div class="container">
+			<div class="container-block">
+				<div class="row">
+					<div class="col-md-4 col-sm-4">
+						<div class="left-panel-block">
+							<div class="left-panel-heading">CATEGORIES</div>
+							<div class="left-panel-list">
+								<ul>
+									<li><a href="mobileapp.html" class="panel-list-item">MOBILE APP</a></li>
+									<li><a href="popular.html" class="panel-list-item active">POPULAR</a></li>
+									<li><a href="online-account.html" class="panel-list-item">ONLINE ACCOUNT</a></li>
+									<li><a href="site&mobileapp.html" class="panel-list-item">SITE AND MOBILE APP</a></li>
+									<li><a href="betting.html" class="panel-list-item">BETTING</a></li>
+									<li><a href="deposite.html" class="panel-list-item">DEPOSIT</a></li>
+									<li><a href="withdrawal.html" class="panel-list-item">WITHDRAWAL</a></li>
+									<li><a href="game-type.html" class="panel-list-item">GAME TYPES</a></li>
+									<li><a href="general.html" class="panel-list-item">GENERAL</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="left-panel-block">
+							<div class="left-panel-heading">GENERAL</div>
+							<div class="left-panel-list">
+								<ul>
+									<li><a href="restricted-territories.html" class="panel-list-item">Restricted Territories</a></li>
+									<li><a href="contact.html" class="panel-list-item">Contact</a></li>
+									<li><a href="termsandconditions.html" class="panel-list-item">Terms and conditions</a></li>
+									<li><a href="rules.html" class="panel-list-item">Rule Book</a></li>
+									<li><a href="betshop-location.html" class="panel-list-item">Betshop Locations</a></li>
+									<li><a href="responsible-gambling.html" class="panel-list-item">Responsible gambling</a></li>
+								</ul>	
+							</div>
+						</div>
+
+					</div>
+					<div class="col-md-8 col-sm-8">
+						<div class="list-panel">
+							<div class="right-panel-block1">
+								<div class="block-heading1">
+									<h2>PLAY TYPE</h2>
+								</div>
+								<div class="playtype-block">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="help-mobile-app-list1">
+												<a href="#">FOOTBALL</a>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FINAL RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>1<br/>
+															X<br/>
+															2</p>
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins<br/>
+															Draw<br/>
+															Away team wins</p>
+													</div>
+												</div>
+											</div>
+
+											<div class="playtype-block-list">
+												<a href="#">DOUBLE CHANCE</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>1X<br/>
+															12<br/>
+															X2</p>
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins or draw<br/>
+															Home or away team wins<br/>
+															Draw or away team wins</p>
+													</div>
+												</div>
+											</div>
+
+											<div class="playtype-block-list">
+												<a href="#">HALF - FULL TIME</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>1-1<br/>
+															1-X<br/>
+															1-2<br/>
+															X-1<br/>
+															X-X<br/>
+															X-2<br/>
+															2-1<br/>
+															2-X<br/>
+															2-2<br/>
+														</p>
+													</div>
+													<div class="col-md-10">
+														<p>Home team won at the half time and at the end of the match<br/>
+															Home team won at half time, in the end draw<br/>
+															Home team won at half time, away team won at the end of the match<br/>
+															Draw at the half time and home team won<br/>
+															Draw at the half time and draw in the end<br/>
+															Draw at the half time, away team won<br/>
+															Away team won at the half time, home team won at the end of the match<br/>
+															Away team won at half time, in the end draw<br/>
+															Away team won at half time and won at the end</p>
+													</div>
+												</div>
+											</div>
+
+
+											<div class="playtype-block-list">
+												<a href="#">FIRST HALF RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>FH1<br/>
+															FHX<br/>
+															FH2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins first halftime<br/>
+															Draw on halftime<br/>
+															Away team wins first halftime</p>
+													</div>
+												</div>
+											</div>	
+											<div class="playtype-block-list">
+												<a href="#">SECOND HALF RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>SH1<br/>
+															SHX<br/>
+															SH2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins second halftime<br/>
+															Second halftime result is draw<br/>
+															Away team wins second halftime</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">HANDICAP (0:1)</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>H1<br/>
+															HX</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins with handicap<br/>
+															Draw with handicap</p>
+													</div>
+												</div>
+											</div>	
+											<div class="playtype-block-list">
+												<a href="#">HANDICAP (1:0)</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>1HX<br/>
+															1H2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Draw with handicap<br/>
+															Away team wins with handicap</p>
+													</div>
+												</div>
+											</div>	
+											<div class="playtype-block-list">
+												<a href="#">WINNER</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>W1<br/>
+															W2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins (void if draw)<br/>
+															Away team wins (void if draw)</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">SUPER WIN</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>SW1<br/>
+															SW2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins and away team does not score during the match<br/>
+															Away team wins and home team does not score during the match</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">DOUBLE WIN</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>DW1<br/>
+															DW2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins first halftime and wins second halftime<br/>
+															Away team wins first halftime and wins second halftime</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FIRST GOAL</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>FG1<br/>
+															FG2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team first to score (if match ends 0:0, the bet is lost)<br/>
+															Away team first to score (if match ends 0:0, the bet is lost</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">TOTAL GOALS FULL TIME</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>0-1<br/>
+															0-2<br/>
+															0-3<br/>
+															1-2G<br/>
+															1-3<br/>
+															2+<br/>
+															2-3<br/>
+															2-4<br/>
+															2-6<br/>
+															5-6<br/>
+															3+<br/>
+															3-4<br/>
+															3-5<br/>
+															4+<br/>
+															4-6<br/>
+															5+<br/>
+															6+<br/>
+															7+
+														</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Less than two goals will be scored during the match<br/>
+															Less than three goals will be scored during the match<br/>
+															Less than four goals will be scored during the match<br/>
+															Exact 1 or 2 goals will be scored during the match<br/>
+															Exact 1, 2 or 3 goals will be scored during the match<br/>
+															2 or more goals in the match<br/>
+															Exact 2 or 3 goals will be scored during the match<br/>
+															Exact 2, 3 or 4 goals will be scored during the match<br/>
+															More than one and less than seven goals will be scored<br/>
+															Exact 5 or 6 goals will be scored during the match<br/>
+															3 or more goals in the match<br/>
+															Exact 3 or 4 goals will be scored during the match<br/>
+															Exact 3, 4 or 5 goals will be scored during the match<br/>
+															Four or more goals will be scored during the match<br/>
+															Exact 4, 5 or 6 goals will be scored during the match<br/>
+															5 or more goals will be scored during the match<br/>
+															6 or more goals will be scored during the match<br/>
+															7 or more goals will be scored during the match</p>
+													</div>
+												</div>
+											</div>
+
+											<div class="playtype-block-list">
+												<a href="#">TOTAL GOALS FIRST HALF</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>FH1+<br/>
+															FH2+<br/>
+															FH3+<br/>
+															FH4+<br/>
+															FH0-1<br/>
+															FH1-2<br/>
+															FH2-3
+														</p>
+													</div>
+													<div class="col-md-10">
+														<p>1 or more goals will be scored in the first half<br/>
+															2 or more goals will be scored in the first half<br/>
+															3 or more goals will be scored in the first half<br/>
+															4 or more goals will be scored in the first half<br/>
+															Less than 2 goals will be scored in the first half<br/>
+															Exact 1 or 2 goals will be scored in the first half<br/>
+															Exact 2 or 3 goals will be scored in the first half
+														</p>
+													</div>
+												</div>
+											</div>
+
+											<div class="playtype-block-list">
+												<a href="#">TOTAL GOALS SECOND HALF</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>SH1+<br/>
+															SH2+<br/>
+															SH3+<br/>
+															SH4+<br/>
+															SH0-1<br/>
+															SH1-2<br/>
+															SH2-3
+														</p>
+													</div>
+													<div class="col-md-10">
+														<p>1 or more goals will be scored in the second half<br/>
+															2 or more goals will be scored in the second half<br/>
+															3 or more goals will be scored in the second half<br/>
+															4 or more goals will be scored in the second half<br/>
+															Less than 2 goals will be scored in the second half<br/>
+															Exact 1 or 2 goals will be scored in the second half<br/>
+															Exact 2 or 3 goals will be scored in the second half
+														</p>
+													</div>
+												</div>
+											</div>
+
+											<div class="playtype-block-list">
+												<a href="#">BOTH TO SCORE OR NOT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>GG<br/>
+															NG</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Both teams score during the match<br/>
+															At least one team does not score during the match</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">BOTH TO SCORE HALF TIME</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>FHGG<br/>
+															SHGG</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Both teams score in the first half<br/>
+															Both teams score in the second half</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">TEAM GOALS</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>0T1<br/>
+															0T2<br/>
+															1+T1<br/>
+															1+T2<br/>
+															2+T1<br/>
+															2+T2<br/>
+															3+T1<br/>
+															3+T2<br/>
+														</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team does not score during the match<br/>
+															Away team does not score during the match<br/>
+															Home team scores at least 1 goal during the match<br/>
+															Away team scores at least 1 goal during the match<br/>
+															Home team scores at least 2 goals during the match<br/>
+															Away team scores at least 2 goals during the match<br/>
+															Home team scores at least 3 goals during the match<br/>
+															Away team scores at least 3 goals during the match
+														</p>
+													</div>
+												</div>
+											</div>
+
+											<div class="playtype-block-list">
+												<a href="#">TEAM HALF TIME</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>FH2+T1<br/>
+															FH2+T2<br/>
+															SH2+T1<br/>
+															SH2+T2
+														</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team scores at least 2 goals in the first halftime<br/>
+															Away team scores at least 2 goals in the first halftime<br/>
+															Home team scores at least 2 goals in the second halftime<br/>
+															Away team scores at least 2 goals in the second halftime
+														</p>
+													</div>
+												</div>
+											</div>
+
+											<div class="playtype-block-list">
+												<a href="#">BOLABET COMBINATIONS</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>1&2-3 <br/>
+															2&2-3 <br/>
+															1&3+ <br/>
+															2&3+ <br/>
+															1&FH2+ <br/>
+															2&FH2+ <br/>
+															1-1&3+ <br/>
+															2-2&3+ <br/>
+															1&2+T1 <br/>
+															2&2+T2 <br/>
+															1&GG <br/>
+															2&GG <br/>
+															GG&3+ <br/>
+															GG&4+ <br/>
+															GG&GG <br/>
+															FH1+&SH1+ <br/>
+															FH1+&SH2+ <br/>
+															FH2+&SH2+ <br/>
+															1&4+ <br/>
+															2&4+ <br/>
+															1&0-2 <br/>
+															2&0-2 <br/>
+															1&2-4 <br/>
+															2&2-4 <br/>
+															1&3-5 <br/>
+															2&3-5 <br/>
+															1X&2+ <br/>
+															X2&2+ <br/>
+															1X&3+ <br/>
+															X2&3+ <br/>
+															1X&4+ <br/> 
+															X2&4+ <br/>
+															1X&0-2 <br/>
+															X2&0-2 <br/>
+															1X&0-3 <br/>
+															X2&0-3 <br/>
+															1X&2-3 <br/>
+															X2&2-3 <br/>
+															1X&GG <br/>
+															X2&GG <br/>
+															1-1&GG <br/>
+															2-2&GG <br/>
+															1-1&2-4 <br/><br/>
+															2-2&2-4 <br/><br/>
+															1-1&3-5 <br/> <br/>
+															2-2&3-5
+														</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team win and exact 2 or 3 goals will be scored during the match<br/>
+															Away team win and exact 2 or 3 goals will be scored during the match<br/>
+															Home team win and 3 or more goals in the match<br/>
+															Away team win and 3 or more goals in the match<br/>
+															Home team win and 2 or more goals in the first half<br/>
+															Away team win and 2 or more goals in the first half<br/>
+															Home team won at the half time and at the end of the match and 3 or more goals in the match<br/>
+															Away team won at half time and won at the end and 3 or more goals in the match<br/>
+															Home team win and home team score 2 or more goals during the match<br/>
+															Away team win and away team score 2 or more goals during the match<br/>
+															Home team win and both teams score during the match<br/>
+															Away team win and both teams score during the match<br/>
+															Both team to score and 3 or more goals in the match<br/>
+															Both team to score and 4 or more goals in the match<br/>
+															Both teams score in both halves<br/>
+															1 or more goals will be scored in the first half and 1 or more goals will be scored in the second half<br/>
+															1 or more goals will be scored in the first half and 2 or more goals will be scored in the second half<br/>
+															2 or more goals will be scored in the first half and 2 or more goals will be scored in the second half<br/>
+															Home team win and 4 or more goals in the match<br/>
+															Away team win and 4 or more goals in the match<br/>
+															Home team win and less than three goals will be scored during the match<br/>
+															Away team win and less than three goals will be scored during the match<br/>
+															Home team win and exact 2, 3 or 4 goals will be scored during the match<br/>
+															Away team win and exact 2, 3 or 4 goals will be scored during the match<br/>
+															Home team win and exact 3, 4 or 5 goals will be scored during the match<br/>
+															Away team win and exact 3, 4 or 5 goals will be scored during the match<br/>
+															Home team wins or draw and 2 or more goals in the match<br/>
+															Draw or away team wins and 2 or more goals in the match<br/>
+															Home team wins or draw and 3 or more goals in the match<br/>
+															Draw or away team wins and 3 or more goals in the match<br/>
+															Home team wins or draw and 4 or more goals in the match<br/>
+															Draw or away team wins and 4 or more goals in the match<br/>
+															Home team wins or draw and less than 3 goals will be scored during the match<br/>
+															Draw or away team wins and less than 3 goals will be scored during the match<br/>
+															Home team wins or draw and less than 4 goals will be scored during the match<br/>
+															Draw or away team wins and less than 4 goals will be scored during the match<br/>
+															Home team wins or draw and exact 2 or 3 goals will be scored during the match<br/>
+															Draw or away team wins and exact 2 or 3 goals will be scored during the match<br/>
+															Home team wins or draw and both team to score<br/>
+															Draw or away team wins and both team to score<br/>
+															Home team won at the half time and at the end of the match and both team to score<br/>
+															Away team won at the half time and at the end of the match and both team to score<br/>
+															Home team won at the half time and at the end of the match and exact 2, 3 or 4 goals will be scored during the match<br/>
+															Away team won at the half time and at the end of the match and exact 2, 3 or 4 goals will be scored during the match<br/>
+															Home team won at the half time and at the end of the match and exact 3, 4 or 5 goals will be scored during the match<br/>
+															Away team won at the half time and at the end of the match and exact 3, 4 or 5 goals will be scored during the match
+														</p>
+													</div>
+												</div>
+											</div>
+
+											<div class="playtype-block-list">
+												<a href="#">ANY TIME</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>AT1<br/>
+															ATX<br/>
+															AT2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins fulltime or first halftime<br/>
+															Fulltime draw or first halftime draw<br/>
+															Away team wins fulltime or first halftime</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">MORE GOALS</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>>FH<br/>
+															FH=SH<br/>
+															>SH</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>More goals in first half<br/>
+															Same number of goals in both halves<br/>
+															More goals in second hal</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">EVEN ODD</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>E<br/>
+															O</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Even or 0:0<br/>
+															Odd</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">NO HALF FULL TIME</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>N1-1<br/>
+															N2-2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Bet is winning for any result of this game which is not 1-1<br/>
+															Bet is winning for any result of this game which is not 2-2</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">CORRECT SCORE</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>1:0<br/>
+															2:0<br/>
+															2:1<br/>
+															3:0<br/>
+															3:1<br/>
+															3:2<br/>
+															0:0<br/>
+															1:1<br/>
+															2:2<br/>
+															3:3<br/>
+															0:1<br/>
+															0:2<br/>
+															1:2<br/>
+															0:3<br/>
+															1:3<br/>
+															2:3
+														</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Customer predicts the final score at the end of the match<br/>
+															...<br/>
+															...<br/>
+															...<br/>
+															...<br/>
+															...<br/>
+															...<br/>
+															...<br/>
+															...<br/>
+															...<br/>
+															...<br/>
+															...<br/>
+															...<br/>
+															...<br/>
+															...<br/>
+															...
+														</p>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>	
+							<div class="right-panel-block1">
+								<div class="playtype-block">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="help-mobile-app-list1">
+												<a href="#">TENNIS</a>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FINAL RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>1<br/>
+															2</p>
+													</div>
+													<div class="col-md-10">
+														<p>First listed player wins<br/>
+															Second listed player wins</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FINAL RESULT HANDICAP - SET'S</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>H1<br/>
+															H2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>First listed player wins with handicap<br/>
+															Second listed player wins with handicap</p>
+													</div>
+												</div>
+											</div>
+
+											<div class="playtype-block-list">
+												<a href="#">FIRST SET RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>FS1<br/>
+															FS2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>First listed player wins first set
+															Second listed player wins first set</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">TOTAL SET'S</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>2S<br/>
+															3S</br>
+															4S</br>
+															5S
+														</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Exactly 2 sets in the match
+															Exactly 3 sets in the match
+															Exactly 4 sets in the match
+															Exactly 5 sets in the match</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">TOTAL GAMES</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p> &#60; TG <br/>
+															&#62; TG
+															</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Less number of games then given limit (< Under) <br/>
+															More number of games then given limit (> Over)</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="right-panel-block1">
+								<div class="playtype-block">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="help-mobile-app-list1">
+												<a href="#">HOCKEY</a>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FINAL RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>1<br/>
+															X<br/>
+															2</p>
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins<br/>
+															Draw<br/>
+															Away team wins</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">DOUBLE CHANCE</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>1X<br/>
+															12<br/>
+															X2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins or draw<br/>
+															Home or away team wins<br/>
+															Draw or away team wins</p>
+													</div>
+												</div>
+											</div>
+
+											<div class="playtype-block-list">
+												<a href="#">FIRST PERIOD RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>FP1<br/>
+															FPX<br/>
+															FP2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team score more goals in the first period<br/>
+															Draw in the first period<br/>
+															Away team score more goals in the first period</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">SECOND PERIOD RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>SP1<br/>
+															SPX</br>
+															SP2
+														</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team score more goals in the second period</br>
+															Draw in the second period</br>
+															Away team score more goals in the second period</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">WINNER</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>W1<br/>
+															W2
+														</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins (void if draw)<br/>
+															Away team wins (void if draw)</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">TOTAL GOALS</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>&#60;TG <br/>
+															=TG<br/>
+															&#62;TG</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Less number of goals than given limit (< Under)<br/>
+															Equal numbers of goals, equal with given limit (= Equal)<br/>
+															More number of goals than given limit (> Over)</p>
+													</div>
+												</div>
+											</div>
+
+											<div class="playtype-block-list">
+												<a href="#">TOTAL GOALS FIRST PERIOD</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>&#60;TGFP <br/>
+															=TGFP<br/>
+															&#62;TGFP</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Less number of goals in the first period than given limit (< Under)<br/>
+															Equal numbers of goals in the first period, equal with given limit (= Equal)<br/>
+															More number of goals in the first period than given limit (> Over)</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">EVEN ODD</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>E <br/>
+															O</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Even<br/>
+															Odd</p>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="right-panel-block1">
+								<div class="playtype-block">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="help-mobile-app-list1">
+												<a href="#">BASKETBALL</a>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FINAL RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>1<br/>
+															X<br/>
+															2</p>
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins before overtimes<br/>
+															Draw<br/>
+															Away team wins before overtimes</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FINAL RESULT HANDICAP - POINTS</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>H1<br/>
+															HX<br/>
+															H2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins with handicap<br/>
+															Draw with handicap<br/>
+															Away team wins with handicap</p>
+													</div>
+												</div>
+											</div>
+
+											<div class="playtype-block-list">
+												<a href="#">FIRST HALF RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>FH1<br/>
+															FHX<br/>
+															FH2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins first half<br/>
+															Draw on halftime<br/>
+															Away team wins first half</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FIRST HALF RESULT HANDICAP - POINTS</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>HFH1<br/>
+															HFHX</br>
+															HFH2
+														</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins first half with handicap<br/>
+															Draw on first half with handicap<br/>
+															Away team wins first half with handicap</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">TOTAL POINTS</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>&#60;TP<br/>
+															=TP<br/>
+															&#62;TP
+															</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Less number of points than given limit (< Under)<br/>
+															Equal number of points, equal with given limit (= Equal)</br>
+															More number of points than given limit (> Over)</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">TOTAL POINTS FIRST HALF</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>&#60;TPFH <br/>
+															=TPFH<br/>
+															&#62;TPFH</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Less number of points in the first half than given limit (< Under)<br/>
+															Equal number of points in the first half, equal with given limit (= Equal)<br/>
+															More number of points in the first half than given limit (> Over)</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">EVEN ODD</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>E <br/>
+															O</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Even<br/>
+															Odd</p>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>	
+							<div class="right-panel-block1">
+								<div class="playtype-block">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="help-mobile-app-list1">
+												<a href="#">VOLLEYBALL</a>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FINAL RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>1<br/>
+															2</p>
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins<br/>
+															Draw</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FINAL RESULT HANDICAP - SET'S</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>H1<br/>
+															HX<br/>
+															H2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins with handicap<br/>
+															Draw with handicap<br/>
+															Away team wins with handicap</p>
+													</div>
+												</div>
+											</div>
+
+											<div class="playtype-block-list">
+												<a href="#">FIRST SET RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>FS1<br/>
+															FS2
+														</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins first set<br/>
+															Away team wins first set</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FIRST SET RESULT HANDICAP - POINTS</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>FSH1<br/>
+															FSHX</br>
+															FSH2
+														</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins first set with handicap</br>
+															Draw on first set with handicap</br>
+															Away team wins first set with handicap</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">TOTAL POINTS</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>&#60;TP<br/>
+															=TP<br/>
+															&#62;TP
+															</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Less number of points than given limit (< Under)<br/>
+															Equal number of points, equal with given limit (= Equal)<br/>
+															More number of points than given limit (> Over)</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">TOTAL POINTS FIRST SET</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>&#60;TPFS <br/>
+															=TPFS<br/>
+															&#62;TPFS</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Less number of points in the first set than given limit (< Under)<br/>
+															Equal number of points in the first set, equal with given limit (= Equal)<br/>
+															More number of points in the first set than given limit (> Over)</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">EVEN ODD</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>E <br/>
+															O</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Even<br/>
+															Odd</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>	 
+							<div class="right-panel-block1">
+								<div class="playtype-block">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="help-mobile-app-list1">
+												<a href="#">HANDBALL</a>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FINAL RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>1<br/>
+															X<br/>
+															2</p>
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins before overtimes<br/>
+															Draw<br/>
+															Away team wins before overtimes</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FINAL RESULT HANDICAP - GOALS</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>H1<br/>
+															HX<br/>
+															H2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins with handicap<br/>
+															Draw with handicap<br/>
+															Away team wins with handicap</p>
+													</div>
+												</div>
+											</div>
+
+											<div class="playtype-block-list">
+												<a href="#">FIRST HALF RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>FH1<br/>
+															FHX<br/>
+															FH2
+														</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins first half<br/>
+															Draw on halftime<br/>
+															Away team wins first half</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FIRST HALF RESULT HANDICAP - GOALS</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>HFH1<br/>
+															HFHX</br>
+															HFH2
+														</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins first half with handicap</br>
+															Draw on first half with handicap</br>
+															Away team wins first half with handicap</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">TOTAL GOALS</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>&#60;TG<br/>
+															=TG<br/>
+															&#62;TG
+															</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Less number of goals than given limit (< Under)<br/>
+															Equal numbers of goals, equal with given limit (= Equal)<br/>
+															More number of goals than given limit (> Over)</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">TOTAL GOALS FIRST HALF</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>&#60;TGFH<br/>
+															=TGFH<br/>
+															&#62;TGFH</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Less number of goals in the first half than given limit (< Under)<br/>
+															Equal numbers of goals in the first half, equal with given limit (= Equal)<br/>
+															More number of goals in the first half than given limit (> Over)</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">EVEN ODD</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>E <br/>
+															O</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Even<br/>
+															Odd</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>	
+							<div class="right-panel-block1">
+								<div class="playtype-block">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="help-mobile-app-list1">
+												<a href="#">WATER POLO</a>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FINAL RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>1<br/>
+															X<br/>
+															2</p>
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins before overtimes<br/>
+															Draw<br/>
+															Away team wins before overtimes</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FINAL RESULT HANDICAP - GOALS</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>H1<br/>
+															HX<br/>
+															H2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins with handicap<br/>
+															Draw with handicap<br/>
+															Away team wins with handicap</p>
+													</div>
+												</div>
+											</div>
+
+											<div class="playtype-block-list">
+												<a href="#">FIRST PERIOD RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>FH1<br/>
+															FHX<br/>
+															FH2
+														</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins first period<br/>
+															Draw on first period<br/>
+															Away team wins first period</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FIRST PERIOD RESULT HANDICAP - GOALS</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>HFH1<br/>
+															HFHX</br>
+															HFH2
+														</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins first period with handicap<br/>
+															Draw on first period with handicap<br/>
+															Away team wins first period with handicap</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">TOTAL GOALS</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>&#60;TG<br/>
+															=TG<br/>
+															&#62;TG
+															</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Less number of goals than given limit (< Under)<br/>
+															Equal numbers of goals, equal with given limit (= Equal)<br/>
+															More number of goals than given limit (> Over)</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">TOTAL GOALS FIRST HALF</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>&#60;TGFH<br/>
+															=TGFH<br/>
+															&#62;TGFH</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Less number of goals in the first half than given limit (< Under)<br/>
+															Equal numbers of goals in the first half, equal with given limit (= Equal)<br/>
+															More number of goals in the first half than given limit (> Over)
+														</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">EVEN ODD</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>E <br/>
+															O</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Even<br/>
+															Odd</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>	
+
+							<div class="right-panel-block1">
+								<div class="playtype-block">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="help-mobile-app-list1">
+												<a href="#">AMERICAN FOOTBALL</a>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FINAL RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>1<br/>
+															X<br/>
+															2</p>
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins before overtimes<br/>
+															Draw<br/>
+															Away team wins before overtimes</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FINAL RESULT HANDICAP - POINTS</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>H1<br/>
+															HX<br/>
+															H2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins with handicap<br/>
+															Draw with handicap<br/>
+															Away team wins with handicap</p>
+													</div>
+												</div>
+											</div>
+
+											<div class="playtype-block-list">
+												<a href="#">FIRST HALF RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>FH1<br/>
+															FHX<br/>
+															FH2
+														</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins first half<br/>
+															Draw on halftime<br/>
+															Away team wins first half</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FIRST HALF RESULT HANDICAP - POINTS</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>HFH1<br/>
+															HFHX</br>
+															HFH2
+														</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins first half with handicap<br/>
+															Draw on first half with handicap<br/>
+															Away team wins first half with handicap</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">TOTAL POINTS</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>&#60;TP<br/>
+															=TP<br/>
+															&#62;TP
+															</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Less number of points than given limit (< Under)<br/>
+															Equal number of points, equal with given limit (= Equal)<br/>
+															More number of points than given limit (> Over)</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">TOTAL POINTS FIRST HALF</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>&#60;TPFH<br/>
+															=TPFH<br/>
+															&#62;TPFH</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Less number of points in the first half than given limit (< Under)<br/>
+															Equal number of points in the first half, equal with given limit (= Equal)<br/>
+															More number of points in the first half than given limit (> Over)</p>
+													</div>
+												</div>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">EVEN ODD</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>E <br/>
+															O</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Even<br/>
+															Odd</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>	
+							<div class="right-panel-block1">
+								<div class="playtype-block">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="help-mobile-app-list1">
+												<a href="#">BASEBALL</a>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FINAL RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>1<br/>
+															2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins<br/>
+															Away team wins</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>	
+							<div class="right-panel-block1">
+								<div class="playtype-block">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="help-mobile-app-list1">
+												<a href="#">CRICKET</a>
+											</div>
+											<div class="playtype-block-list">
+												<a href="#">FINAL RESULT</a>
+											</div>
+											<div class="playtype-block-list1">
+												<div class="row">
+													<div class="col-md-2 text-center">
+														<p>1<br/>
+															2</p>
+
+													</div>
+													<div class="col-md-10">
+														<p>Home team wins<br/>
+															Away team wins</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>	
+						</div>	
+					</div>
+				</div>
+			</div>	
+		</div>	
+	</div>
+	
+	<footer>
+	<div class="footer-main">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="footer-heading">
+					<h6>Legal</h6>
+				</div>
+				<ul>
+					<li><a href="termsandconditions.html">Terms & Condition</a></li>
+					<li><a href="rules.html">Rules</a></li>
+					<li><a href="restricted-territories.html">Restricted Territories</a></li>
+					<li><a href="responsible-gambling.html">Responsible Gambling</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3">
+				<div class="footer-heading">
+					<h6>Bolabet1x2</h6>
+				</div>
+				<ul>
+					<li><a href="betshop-location.html">Betshop Locations</a></li>
+					<li><a href="contact.html">Contact</a></li>
+					<li><a href="promotions.html">Promotions</a></li>
+					<li><a href="#">FAQ</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3">
+				<div class="footer-heading">
+					<h6>Help</h6>
+				</div>
+				<ul>
+					<li><a href="deposite.html">Deposits</a></li>
+					<li><a href="withdrawal.html">Withdrawals</a></li>
+					<li><a href="playtype.html">Play Types</a></li>
+					<li><a href="#">Sport Book</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3">
+				<div class="footer-heading">
+					<h6>Social Networks</h6>
+				</div>
+				<div class="footer-social">
+					<ul>
+						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="footer-copy">
+		<p>&#169; 2018 All Right Reserved. Bolabet1x2.com</p>
+	</div>
+	<div class="clearfix"></div>
+</footer>
+<script>
+function acceptoodone(id)
+{
+ var getdata=$('#'+id).html();
+ $('#odd-option-selected').html(getdata);
+ $('#bet-confirm').removeClass('show');
+ $('.bet-confirm-btn').addClass('collapsed');
+}
+function oddunit(id)
+{
+ var getdata=$('#'+id).html();
+ $('#oddunit-selected').html(getdata);
+}
+function langselect(id)
+{
+ var getdata=$('#'+id).html();
+ $('#lang-selected').html(getdata);
+}
+</script>
+
+	<script src="js/jquery.min.js"></script>
+
+
+	<!--<script src="js/jquery-3.3.1.slim.min.js"></script>-->
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

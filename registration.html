@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="images/fav.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/feather.min.css">
+    <link rel="stylesheet" href="css/icofont.min.css">
+	<link rel="stylesheet" href="css/line-awesome.min.css">
+	<link rel="stylesheet" href="css/glyphicon.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+    <title>Bolabet 1X2</title>
+</head>
+<body>
+    <div class="header">
+		<div class="header-top">
+			<ul class="headtop-links float-left">
+				<li><a href="help.html">Help</a></li>
+				<li><a href="#">Live Support</a></li>
+				<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+			<ul class="headtop-links float-right">
+				<li><a href="howtoplay.html">How to play</a></li>
+				<li><a href="payment.html">Payments</a></li>
+				<li><a href="#">My Bets</a></li>
+				<li><a href="playtype.html">Play types</a></li>
+				<li><a href="promotions.html">Promotions</a></li>
+				<!--li><a href="mobileapp.html">Mobile Application</a></li-->
+				<li><a href="coupons.html">Coupons</a></li>
+				<li>
+					<div class="headtop-drop">
+						<div class="headtop-drop-arrow">
+							<i class="la la-angle-right"></i>
+						</div>
+						Odds <span class="headtop-drop-value" id="oddunit-selected">Decimal</span>
+						<div class="headtop-child">
+							<div class="headtop-child-item">
+								<label onclick="oddunit('unitdec')">
+									<input type="radio" name="oddunit" checked="checked">
+									<span id="unitdec">Decimal</span>
+								</label>
+							</div>
+							<div class="headtop-child-item">
+								<label onclick="oddunit('unitfrac')">
+									<input type="radio" name="oddunit">
+									<span id="unitfrac">Fractional</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="headtop-drop">
+						<div class="headtop-drop-arrow">
+							<i class="la la-angle-right"></i>
+						</div>
+						Language <span class="headtop-drop-value" id="lang-selected">English</span>
+						<div class="headtop-child">
+							<div class="headtop-child-item">
+								<label onclick="langselect('lang-eng')">
+									<input type="radio" name="lang-name" checked="checked">
+									<div class="float-left lang-flag"><img src="images/eng-flag.jpg" alt=""/></div>
+									<span id="lang-eng">English</span>
+								</label>
+							</div>
+							<div class="headtop-child-item">
+								<label onclick="langselect('lang-ger')">
+									<input type="radio" name="lang-name">
+									<div class="float-left lang-flag"><img src="images/eng-flag.jpg" alt=""/></div>
+									<span id="lang-ger">German</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li><a class="head-time" href="#">16:14 GMT+2</a></li>
+			</ul>
+		</div>
+		<div class="header-main">
+			<div class="logo-wrapper">
+			   <a href="index.html"> <img src="images/logo.png" alt=""></a>
+			</div>
+			<div class="header-category">
+				<button onclick="menulist()"><i class="ft-menu"></i></button>
+				<ul id="head-menu">
+					<li>
+						<a class="category-sport active" href="index.html">Sports Betting</a>
+					</li>
+					<li>
+						<a class="category-livebet"href="livebet.html">Live Betting</a>
+					</li>
+					<li>
+						<a class="category-virtual" href="#">Virtuals</a>
+					</li>
+				</ul>
+				<script>
+					function menulist() {
+						if(document.getElementById('head-menu').style.display == "block"){ 
+							document.getElementById('head-menu').style.display = "none";
+						}
+						else if(document.getElementById('head-menu').style.display == "none"){
+							document.getElementById('head-menu').style.display = "block";
+						}
+						else{
+							document.getElementById('head-menu').style.display = "block";
+						}
+					}
+				</script>
+			</div>
+			<div class="header-login">
+				<ul>
+					<li><a href="registration.html" class="header-reg-btn">Register</a></li>
+					<li><input type="text" placeholder="Email or Phone No."></li>
+					<li><input type="text" placeholder="Password"><br><a href="#" onclick="forgotpassFunction()" class="head-forget-pass">Forgot Password ?</a></li>
+					<li><a href="login.html" class="header-login-btn">Login</a></li>
+				</ul>
+				
+			</div>
+			<div class="forgotpass-popup" id="forgotpass-block" style="display:none;">
+				<div class="forgotpass-content">
+					<div class="forgotpassclose" onclick="forgotpassclose()"><i class="ft-x"></i></div>
+					<h4>Forgot Password?</h4>
+					<div class="form-group">
+						<label>Enter Email ID:</label>
+						<div class="form-input">
+							<input class="form-control" type="email" placeholder="abc@xyz.com">
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="mb-3">Please enter an E-mail address you registered your account with and we will send you a link with link to reset your password</div>
+					<div class="forgotpass-submit">
+						<button onclick="forgotpassclose()">Cancel</button>
+						<input type="submit" value="Reset Password">
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<script>
+				function forgotpassFunction() {
+					if(document.getElementById('forgotpass-block').style.display == "none"){ 
+						document.getElementById('forgotpass-block').style.display = "block";
+					}
+					else{ 
+						document.getElementById('forgotpass-block').style.display = "none";
+					}
+				}
+				function forgotpassclose() {
+					if(document.getElementById('forgotpass-block').style.display == "block"){ 
+						document.getElementById('forgotpass-block').style.display = "none";
+					}
+				}
+			</script>
+			<div class="clearfix"></div>
+		</div>
+        <div class="clearfix"></div>
+    </div>
+	<div class="content-body p-0">
+        <div class="reg-block">
+            <div class="reg-block-content">
+				<div class="reg-form-heading">
+					<!--<img src="images/logo-blk.png" alt="">-->
+					<p>New to Bolabet1x2.com ?</p>
+					<h5>Register now, it's easy!</h5>
+				</div>
+				<form action="" method="POST" id="registration" >
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="form-title">First Name:</label>
+								<div class="form-input">
+									<input class="form-control" type="text" name="name"  />
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-group">
+								<label class="form-title">Last Name:</label>
+								<div class="form-input">
+									<input class="form-control" type="text"  name="last name" />
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-group">
+								<label class="form-title">Phone Number:</label>
+								<div class="form-input">
+									<input class="form-control" type="text" name="" placeholder="09X XXX XXXX OR 076 XXX XXXX" />
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-group">
+								<label class="form-title">Email:</label>
+								<div class="form-input">
+									<input class="form-control" type="text" name="email"/>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-group">
+								<label class="form-title">Confirm Email:</label>
+								<div class="form-input">
+									<input class="form-control" type="text" name="email"/>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-group">
+								<label class="form-title">Password:</label>
+								<div class="form-input">
+									<input class="form-control" type="text" name="password" />
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-group">
+								<label class="form-title">Confirm Password:</label>
+								<div class="form-input">
+									<input class="form-control" type="text" name="re-password" />
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+						<div class="col-md-6">
+						
+							<div class="form-group">
+								<label class="form-title">Gender:</label>
+								<div class="form-input">
+									<div class="gen-block">
+									    <label>
+											<input type="radio" name="gender" value="male"> Male
+										</label>	
+										<label>
+											<input type="radio" name="gender" value="female"> Female
+										</label>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							
+							
+							<div class="form-group">
+								<label class="form-title">Birthday:</label>
+								<div class="form-input">
+									<div class="birth-fields">
+										<ul>
+											<li>
+												<select  name="date" class="form-control">
+													<option value="">1</option>
+													<option value="">2</option>
+													<option value="">3</option>
+													<option value="">4</option>
+													<option value="">5</option>
+													<option value="">6</option>
+													<option value="">7</option>
+													<option value="">8</option>
+													<option value="">9</option>
+													<option value="">10</option>
+													<option value="">11</option>
+													<option value="">12</option>
+													<option value="">13</option>
+													<option value="">14</option>
+													<option value="">15</option>
+													<option value="">16</option>
+													<option value="">17</option>
+													<option value="">18</option>
+													<option value="">19</option>
+													<option value="">20</option>
+													<option value="">21</option>
+													<option value="">22</option>
+													<option value="">23</option>
+													<option value="">24</option>
+													<option value="">25</option>
+													<option value="">26</option>
+													<option value="">27</option>
+													<option value="">28</option>
+													<option value="">29</option>
+													<option value="">30</option>
+													<option value="">31</option>
+												</select>
+											</li>
+											<li>
+												<select name="date" class="form-control">
+													<option value="">January</option>
+													<option value="">February</option>
+													<option value="">March</option>
+													<option value="">April</option>
+													<option value="">May</option>
+													<option value="">June</option>
+													<option value="">July</option>
+													<option value="">August</option>
+													<option value="">September</option>
+													<option value="">October</option>
+													<option value="">November</option>
+													<option value="">December</option>
+												</select>
+											</li>
+											<li>
+												<select name="date" class="form-control">
+													<option value="">1920</option>
+													<option value="">1921</option>
+													<option value="">1922</option>
+													<option value="">1923</option>
+													<option value="">1924</option>
+													<option value="">1925</option>
+													<option value="">1926</option>
+													<option value="">1927</option>
+													<option value="">1928</option>
+													<option value="">1929</option>
+													<option value="">1930</option>
+													<option value="">1931</option>
+													<option value="">1932</option>
+													<option value="">1933</option>
+													<option value="">1934</option>
+													<option value="">1935</option>
+													<option value="">1936</option>
+													<option value="">1937</option>
+													<option value="">1938</option>
+													<option value="">1939</option>
+													<option value="">1940</option>
+													<option value="">1941</option>
+													<option value="">1942</option>
+													<option value="">1943</option>
+													<option value="">1944</option>
+													<option value="">1945</option>
+													<option value="">1946</option>
+													<option value="">1947</option>
+													<option value="">1948</option>
+													<option value="">1949</option>
+													<option value="">1950</option>
+													<option value="">1951</option>
+													<option value="">1952</option>
+													<option value="">1953</option>
+													<option value="">1954</option>
+													<option value="">1955</option>
+													<option value="">1956</option>
+													<option value="">1957</option>
+													<option value="">1958</option>
+													<option value="">1959</option>
+													<option value="">1960</option>
+													<option value="">1961</option>
+													<option value="">1962</option>
+													<option value="">1963</option>
+													<option value="">1964</option>
+													<option value="">1965</option>
+													<option value="">1966</option>
+													<option value="">1967</option>
+													<option value="">1968</option>
+													<option value="">1969</option>
+													<option value="">1970</option>
+													<option value="">1971</option>
+													<option value="">1972</option>
+													<option value="">1973</option>
+													<option value="">1974</option>
+													<option value="">1975</option>
+													<option value="">1976</option>
+													<option value="">1977</option>
+													<option value="">1978</option>
+													<option value="">1979</option>
+													<option value="">1980</option>
+													<option value="">1981</option>
+													<option value="">1982</option>
+													<option value="">1983</option>
+													<option value="">1984</option>
+													<option value="">1985</option>
+													<option value="">1986</option>
+													<option value="">1987</option>
+													<option value="">1988</option>
+													<option value="">1989</option>
+													<option value="">1990</option>
+													<option value="">1991</option>
+													<option value="">1992</option>
+													<option value="">1993</option>
+													<option value="">1994</option>
+													<option value="">1995</option>
+													<option value="">1996</option>
+													<option value="">1997</option>
+													<option value="">1998</option>
+													<option value="">1999</option>
+													<option value="">2000</option>
+													<option value="">2001</option>
+												</select>
+											</li>
+										</ul>
+									</div>	
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-group">
+								<label class="form-title">Identity No:</label>
+								<div class="form-input">
+									<input class="form-control" type="text" name="re-password" />
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-group">
+								<label class="form-title">Address:</label>
+								<div class="form-input">
+									<input class="form-control" type="text" name="" />
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-group">
+								<label class="form-title">City:</label>
+								<div class="form-input">
+									<input class="form-control" type="text" name="" />
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-group">
+								<label class="form-title">Country:</label>
+								<div class="form-input">
+									<select name="country" id="category" class="form-control">
+										<option value="">Zambia</option>
+									</select>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-group">
+								<div class="btn1" >
+									<a class="reg-cancel-btn" href="index.html">Cancel</a>
+									<a data-toggle="tab"  class="btn-content1" onclick="regnext()" href="">Next</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-group text-center">
+								Already have an account? <a href="#">Sign In</a></div>
+							</div>
+						</div>
+						<div class="cancl-btn">
+							<a href="index.html"><i class="ft-x"></i></a>	
+						</div>	
+						<div class="reg-next" id="reg-next">
+							<div class="reg-next-content">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<div class="form-input">
+												<input type="checkbox" name="" checked>
+												I would like to receive information about exclusive offers and promotions on products.
+											</div>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<div class="row">
+												<div class="col-md-10 news-option">
+													<div class="row">
+														<div class="col-md-6">
+															<label>Internal Messages</label>
+														</div>
+														<div class="col-md-6">
+															<div class="form-input">
+																<label>
+																	<input type="radio" name="message" checked="checked">Yes
+																</label>
+																<label>
+																	<input type="radio"  name="message">No
+																</label>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-md-6">
+															<label>Push Notifications</label>
+														</div>
+														<div class="col-md-6">
+															<div class="form-input">
+																<label>
+																	<input type="radio"  name="push" checked="checked">Yes
+																</label>
+																<label>
+																	<input type="radio" name="push">No
+																</label>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-md-6">
+															<label>Phone Call</label>
+														</div>
+														<div class="col-md-6">
+															<div class="form-input">
+																<label>
+																	<input type="radio" name="call" checked="checked">Yes
+																</label>
+																<label>
+																	<input type="radio" name="call">No
+																</label>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-md-6">
+															<label>Email</label>
+														</div>
+														<div class="col-md-6">
+															<div class="form-input">
+																<label>
+																	<input type="radio" name="email" checked="checked">Yes
+																</label>
+																<label>
+																	<input type="radio" name="email">No
+																</label>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-md-6">
+															<label>SMS</label>
+														</div>
+														<div class="col-md-6">
+															<div class="form-input">
+																<label>
+																	<input type="radio"  name="sms" checked="checked">Yes
+																</label>
+																<label>
+																	<input type="radio" name="sms">No
+																</label>
+															</div>
+														</div>
+													</div>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<div class="form-input">
+												<input type="checkbox" name="" >
+												I declare that i am 18 years or over.
+											</div>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<div class="form-input">
+												<input type="checkbox" name="" value="">
+												I agree to all <b>Terms & Conditions</b> and have read, understood and accepted the general terms and conditions.
+											</div>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<div class="btn1" >
+												<a data-toggle="tab" class="btn-content1" onclick="registermsg()" href="">Register</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="clearfix"></div>
+				</form>
+				<div class="register-popup" id="register-popup">
+					<div class="register-popup-block">
+						<h4>One more thing</h4>
+						<p>Almost done. We still need you to activate your account. Please check your e-mail for activation link we've sent you. After that you'll be able to login into your account</p>
+						<a href="#" onclick="regsubmit()">Ok</a>
+					</div>
+				</div>
+			</div>
+        </div>	
+    </div>
+    
+    <script>
+    function registermsg() {
+        document.getElementById('register-popup').style.display = "block";
+		document.getElementById('reg-next').style.display = "none";
+    }
+    function regsubmit() {
+        document.getElementById('register-popup').style.display = "none";
+    }
+	function regnext() {
+        document.getElementById('reg-next').style.display = "block";
+    }
+    </script>
+    <footer>
+        <div class="footer-main">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Legal</h6>
+                    </div>
+                    <ul>
+                        <li><a href="termsandconditions.html">Terms & Condition</a></li>
+                        <li><a href="rules.html">Rules</a></li>
+                        <li><a href="restricted-territories.html">Restricted Territories</a></li>
+                        <li><a href="responsible-gambling.html">Responsible Gambling</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Bolabet1x2</h6>
+                    </div>
+                    <ul>
+                        <li><a href="betshop-location.html">Betshop Locations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="promotions.html">Promotions</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Help</h6>
+                    </div>
+                    <ul>
+                        <li><a href="deposite.html">Deposits</a></li>
+                        <li><a href="withdrawal.html">Withdrawals</a></li>
+                        <li><a href="playtype.html">Play Types</a></li>
+                        <li><a href="#">Sport Book</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Social Networks</h6>
+                    </div>
+                    <div class="footer-social">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="footer-copy">
+            <p>&#169; 2018 All Right Reserved. Bolabet1x2.com</p>
+        </div>
+        <div class="clearfix"></div>
+    </footer>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<!--<script src="js/jquery-3.3.1.slim.min.js"></script>-->
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    function acceptoodone(id)
+    {
+     var getdata=$('#'+id).html();
+     $('#odd-option-selected').html(getdata);
+     $('#bet-confirm').removeClass('show');
+     $('.bet-confirm-btn').addClass('collapsed');
+    }
+	function oddunit(id)
+    {
+     var getdata=$('#'+id).html();
+     $('#oddunit-selected').html(getdata);
+    }
+	function langselect(id)
+    {
+     var getdata=$('#'+id).html();
+     $('#lang-selected').html(getdata);
+    }
+</script>
+</body>
+</html>

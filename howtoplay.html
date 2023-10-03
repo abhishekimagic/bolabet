@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="images/fav.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/feather.min.css">
+    <link rel="stylesheet" href="css/icofont.min.css">
+	<link rel="stylesheet" href="css/line-awesome.min.css">
+	<link rel="stylesheet" href="css/glyphicon.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    
+    
+    <title>Bolabet 1X2</title>
+</head>
+<body>
+    <div class="header">
+		<div class="header-top">
+			<ul class="headtop-links float-left">
+				<li><a href="help.html">Help</a></li>
+				<li><a href="#">Live Support</a></li>
+				<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+			<ul class="headtop-links float-right">
+				<li><a href="howtoplay.html">How to play</a></li>
+				<li><a href="payment.html">Payments</a></li>
+				<li><a href="#">My Bets</a></li>
+				<li><a href="playtype.html">Play types</a></li>
+				<li><a href="promotions.html">Promotions</a></li>
+				<!--li><a href="mobileapp.html">Mobile Application</a></li-->
+				<li><a href="coupons.html">Coupons</a></li>
+				<li>
+					<div class="headtop-drop">
+						<div class="headtop-drop-arrow">
+							<i class="la la-angle-right"></i>
+						</div>
+						Odds <span class="headtop-drop-value" id="oddunit-selected">Decimal</span>
+						<div class="headtop-child">
+							<div class="headtop-child-item">
+								<label onclick="oddunit('unitdec')">
+									<input type="radio" name="oddunit" checked="checked">
+									<span id="unitdec">Decimal</span>
+								</label>
+							</div>
+							<div class="headtop-child-item">
+								<label onclick="oddunit('unitfrac')">
+									<input type="radio" name="oddunit">
+									<span id="unitfrac">Fractional</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="headtop-drop">
+						<div class="headtop-drop-arrow">
+							<i class="la la-angle-right"></i>
+						</div>
+						Language <span class="headtop-drop-value" id="lang-selected">English</span>
+						<div class="headtop-child">
+							<div class="headtop-child-item">
+								<label onclick="langselect('lang-eng')">
+									<input type="radio" name="lang-name" checked="checked">
+									<div class="float-left lang-flag"><img src="images/eng-flag.jpg" alt=""/></div>
+									<span id="lang-eng">English</span>
+								</label>
+							</div>
+							<div class="headtop-child-item">
+								<label onclick="langselect('lang-ger')">
+									<input type="radio" name="lang-name">
+									<div class="float-left lang-flag"><img src="images/eng-flag.jpg" alt=""/></div>
+									<span id="lang-ger">German</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li><a class="head-time" href="#">16:14 GMT+2</a></li>
+			</ul>
+		</div>
+		<div class="header-main">
+			<div class="logo-wrapper">
+			   <a href="index.html"> <img src="images/logo.png" alt=""></a>
+			</div>
+			<div class="header-category">
+				<button onclick="menulist()"><i class="ft-menu"></i></button>
+				<ul id="head-menu">
+					<li>
+						<a class="category-sport active" href="index.html">Sports Betting</a>
+					</li>
+					<li>
+						<a class="category-livebet"href="livebet.html">Live Betting</a>
+					</li>
+					<li>
+						<a class="category-virtual" href="#">Virtuals</a>
+					</li>
+				</ul>
+				<script>
+					function menulist() {
+						if(document.getElementById('head-menu').style.display == "block"){ 
+							document.getElementById('head-menu').style.display = "none";
+						}
+						else if(document.getElementById('head-menu').style.display == "none"){
+							document.getElementById('head-menu').style.display = "block";
+						}
+						else{
+							document.getElementById('head-menu').style.display = "block";
+						}
+					}
+				</script>
+			</div>
+			<div class="header-login">
+				<ul>
+					<li><a href="registration.html" class="header-reg-btn">Register</a></li>
+					<li><input type="text" placeholder="Email or Phone No."></li>
+					<li><input type="text" placeholder="Password"><br><a href="#" onclick="forgotpassFunction()" class="head-forget-pass">Forgot Password ?</a></li>
+					<li><a href="login.html" class="header-login-btn">Login</a></li>
+				</ul>
+				
+			</div>
+			<div class="forgotpass-popup" id="forgotpass-block" style="display:none;">
+				<div class="forgotpass-content">
+					<div class="forgotpassclose" onclick="forgotpassclose()"><i class="ft-x"></i></div>
+					<h4>Forgot Password?</h4>
+					<div class="form-group">
+						<label>Enter Email ID:</label>
+						<div class="form-input">
+							<input class="form-control" type="email" placeholder="abc@xyz.com">
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="mb-3">Please enter an E-mail address you registered your account with and we will send you a link with link to reset your password</div>
+					<div class="forgotpass-submit">
+						<button onclick="forgotpassclose()">Cancel</button>
+						<input type="submit" value="Reset Password">
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<script>
+				function forgotpassFunction() {
+					if(document.getElementById('forgotpass-block').style.display == "none"){ 
+						document.getElementById('forgotpass-block').style.display = "block";
+					}
+					else{ 
+						document.getElementById('forgotpass-block').style.display = "none";
+					}
+				}
+				function forgotpassclose() {
+					if(document.getElementById('forgotpass-block').style.display == "block"){ 
+						document.getElementById('forgotpass-block').style.display = "none";
+					}
+				}
+			</script>
+			<div class="clearfix"></div>
+		</div>
+        <div class="clearfix"></div>
+    </div>
+	<div class="content-body">	
+		<div class="container">
+			<div class="container-block">
+				<div class="row">
+					<div class="col-md-4 col-sm-4">
+						<div class="left-panel-block">
+							<div class="left-panel-heading">CATEGORIES</div>
+						<div class="left-panel-list">
+							<ul>
+								<li><a href="mobileapp.html" class="panel-list-item">MOBILE APP</a></li>
+								<li><a href="popular.html" class="panel-list-item active">POPULAR</a></li>
+								<li><a href="online-account.html" class="panel-list-item">ONLINE ACCOUNT</a></li>
+								<li><a href="site&mobileapp.html" class="panel-list-item">SITE AND MOBILE APP</a></li>
+								<li><a href="betting.html" class="panel-list-item">BETTING</a></li>
+								<li><a href="deposite.html" class="panel-list-item">DEPOSIT</a></li>
+								<li><a href="withdrawal.html" class="panel-list-item">WITHDRAWAL</a></li>
+								<li><a href="game-type.html" class="panel-list-item">GAME TYPES</a></li>
+								<li><a href="general.html" class="panel-list-item">GENERAL</a></li>
+							</ul>
+						</div>
+						</div>
+						<div class="left-panel-block">
+							<div class="left-panel-heading">GENERAL</div>
+						<div class="left-panel-list">
+							<ul>
+								<li><a href="restricted-territories.html" class="panel-list-item">Restricted Territories</a></li>
+								<li><a href="contact.html" class="panel-list-item">Contact</a></li>
+								<li><a href="termsandconditions.html" class="panel-list-item">Terms and conditions</a></li>
+								<li><a href="rules.html" class="panel-list-item">Rule Book</a></li>
+								<li><a href="betshop-location.html" class="panel-list-item">Betshop Locations</a></li>
+								<li><a href="responsible-gambling.html" class="panel-list-item">Responsible gambling</a></li>
+							</ul>	
+						</div>
+						</div>
+						
+					</div>
+					<div class="col-md-8 col-sm-8">
+						<div class="right-panel-block1">
+							<div class="block-heading1">
+								<h2>HOW TO PLAY<a href="general.html"> << Back</a></h2>
+							</div>
+							<div class="block-content-section">
+							    <h4>How to play</h4>
+								<p>It is so easy to get started playing with Bolabet!</p>
+									<div class="tnc-block">
+										<h3>Step 1: JOIN NOW & REGISTER...</h3>
+										<p>First, you need to JOIN NOW by REGISTERING your details...just click on the button towards the top right of the screen...</p>
+										<p>Just enter your 10-digit phone number (this will be your username) and also choose a password...</p>
+										<p>Remember, it's very important to choose a password that meets our high security requirements... It must containt at least one CAPITAL letter, one small letter, 1 number & a symbol like this!</p>
+										<p>This is to protect your account with the strongest security so nobody else can get inside and steal your funds...</p>
+										
+										<h3>Step 2: DEPOSIT cash...</h3>
+										<p>After you have registered, the next stage on the journey to becoming a Bolabet player is to DEPOSIT.</p>
+										<p>To do this you need to click on the DEPOSIT NOW button...</p>
+										<p>You will see that Bolabet offers the widest range of deposit options...</p>
+										<p>These include:</p>
+										<p><b>MTN Mobile Money</b></p>
+										<p><b>Airtel Mobile Money</b></p>
+										<p><b>Touch 4 Pay</b></p>
+										<p><b>543 Konse Konse</b></p>
+										<p><b>Bank Transfer.</b></p>
+										
+										<h3>Step 3: Place your BETS...</h3>
+										<p>Next is the exciting part...Now you must choose your bets by adding the teams or events you want to bet on to the Betslip...</p>
+										<p><b>TIPS & TRICKS:</b></p>
+										<p>Use the navigation menu on the left of your screen to choose the sport you are interested in - for example football.</p>
+										<p>Then scroll down the list to find the games you are interested in.</p>
+										<p>You can either search by country (for example England for the English Premier League) or look at all the games that you are interested in.</p>
+										<p>Once you have found the game that interests you, you must decide what you want to bet on.</p>
+										<p>The most popular markets are typically which team will win in 90 minutes (Home team, away team, or the draw) but there are typically hundreds of other markets for every game. Will both teams score (GG) ?</p>
+										<p>How many goals will there be?</p>
+										<p>The choice is nearly endless.</p>
+										<p>Once you have decided on your bet you must click on your bet.</p>
+										<p>This will automatically add the bet to the betslip on the right hand side of the screen.</p>
+										<p>If you prefer, you can add many events to the same betslip. For example, you could choose six different teams to win and add them all to one betslip.</p>
+										<p>In this way it becomes harder to win (because all teams must for you to be a winner) but the odds will become huge so you could hit a huge payout for a tiny stake.</p>
+										<p>If you make a mistake you can click to delete a selection you no longer want on your betslip.
+										<p>Once you are happy with your betslip it's time to start playing.</p>
+										<p>You can click on the betslip and now you must choose your stake. The minimum stake is just 3 ZMW but you can bet any amount up to the total balance you have deposited in your account.(subject to certain restrictions on very large bets).</p> 
+										<p>If at any time you want to see how much money is in your account, just look at the top bar of the screen or click on wallet to see your balance.</p> 
+										<p>Once you are happy with your bet and stake you just click "place bet" to enter your bet and you will receive a confirmation on the screen.</p> 
+										<p>Later, you can log back into your account to check the result of the game and see if your bet was a winner or loser.</p> 
+
+										<h3>Step 4: WIN & WITHDRAW CASH WINNINGS instantly via mobile money!</h3>
+										 <p>OK, I have won big, now I want my hands on my lupiya, cash, how do I withdraw?</p>
+										 <p>Congratulation on your win! Now it's time to get your hands on your hard earned cash...</p>
+										 <p>Just click on the "wallet" or "withdraw" section of the menu and you will see you now have the chance to get your hands on your cash as fast as possible.</p>
+										 <p>Bolabet offers a very wide range of withdrawal methods.</p>
+										 <p>These include:</p>
+										 <p><b>MTN Mobile Money (instant)</b></p>
+										 <p><b>Airtel Mobile Money (1 hour)</b></p>
+										 <p><b>543 Konse Konse (1 hour)</b></p>
+										 <p><b>ATM withdrawal (1 hour)</b></p>
+										 <p>just enter the amount you would like to withdraw in the website provided and press withdraw.</p>
+										 <p>Our customer service team will immediately reveiw your request and process it is as fast as possible.</p>
+									</div>
+								
+								
+							</div>
+							<div class="block-heading1">
+								<h3>More Question...</h3>
+							</div>							
+							<div class="block-heading1-content">
+								<div class="block-content">
+									<a href="#">
+										<h3>Contact</h3>
+										<p>If you have any questions, do not hesitate to contact us</p>
+									</a>
+								</div>
+							</div>
+							<div class="block-heading1-content">
+								<div class="block-content">
+									<a href="#">
+										<h3>Terms and conditions</h3>
+										<p>Every person who creates an online user account at Bolabet does so in accordance with the terms, rule book and laws</p>
+									</a>
+								</div>
+							</div>
+							<div class="block-heading1-content">
+								<div class="block-content">
+									<a href="#">
+										<h3>Rule Book</h3>
+										<p>Rule book of betting with Bolabet</p>
+									</a>
+								</div>
+							</div>
+							<div class="block-heading1-content">
+								<div class="block-content">
+									<a href="#">
+										<h3>Betshop Locations</h3>
+										<p>Find nearest Bolabet betshop </p>
+									</a>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>	
+	
+    
+
+    <footer>
+        <div class="footer-main">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Legal</h6>
+                    </div>
+                    <ul>
+                        <li><a href="termsandconditions.html">Terms & Condition</a></li>
+                        <li><a href="rules.html">Rules</a></li>
+                        <li><a href="restricted-territories.html">Restricted Territories</a></li>
+                        <li><a href="responsible-gambling.html">Responsible Gambling</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Bolabet1x2</h6>
+                    </div>
+                    <ul>
+                        <li><a href="betshop-location.html">Betshop Locations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="promotions.html">Promotions</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Help</h6>
+                    </div>
+                    <ul>
+                        <li><a href="deposite.html">Deposits</a></li>
+                        <li><a href="withdrawal.html">Withdrawals</a></li>
+                        <li><a href="playtype.html">Play Types</a></li>
+                        <li><a href="#">Sport Book</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-heading">
+                        <h6>Social Networks</h6>
+                    </div>
+                    <div class="footer-social">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="footer-copy">
+            <p>&#169; 2018 All Right Reserved. Bolabet1x2.com</p>
+        </div>
+        <div class="clearfix"></div>
+    </footer>
+	<script>
+    function acceptoodone(id)
+    {
+     var getdata=$('#'+id).html();
+     $('#odd-option-selected').html(getdata);
+     $('#bet-confirm').removeClass('show');
+     $('.bet-confirm-btn').addClass('collapsed');
+    }
+	function oddunit(id)
+    {
+     var getdata=$('#'+id).html();
+     $('#oddunit-selected').html(getdata);
+    }
+	function langselect(id)
+    {
+     var getdata=$('#'+id).html();
+     $('#lang-selected').html(getdata);
+    }
+</script>
+
+ <script src="js/jquery.min.js"></script>
+ 
+
+<!--<script src="js/jquery-3.3.1.slim.min.js"></script>-->
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
